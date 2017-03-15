@@ -14,6 +14,9 @@
 		BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D481E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld */; };
 		BB2E5D4C1E796E2700768B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2E5D4B1E796E2700768B60 /* Assets.xcassets */; };
 		BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */; };
+		BB2E5D591E79730400768B60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D581E79730400768B60 /* HomeViewController.m */; };
+		BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D5B1E79731B00768B60 /* MapViewController.m */; };
+		BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D5F1E79733B00768B60 /* AnnouncementsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,12 @@
 		BB2E5D4B1E796E2700768B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB2E5D4E1E796E2700768B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB2E5D501E796E2700768B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB2E5D571E79730400768B60 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		BB2E5D581E79730400768B60 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		BB2E5D5A1E79731B00768B60 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		BB2E5D5B1E79731B00768B60 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		BB2E5D5E1E79733B00768B60 /* AnnouncementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementsViewController.h; sourceTree = "<group>"; };
+		BB2E5D5F1E79733B00768B60 /* AnnouncementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,9 @@
 				BB2E5D401E796E2600768B60 /* AppDelegate.m */,
 				BB2E5D421E796E2600768B60 /* ViewController.h */,
 				BB2E5D431E796E2600768B60 /* ViewController.m */,
+				BB2E5D561E7972EE00768B60 /* Home */,
+				BB2E5D5D1E79732000768B60 /* Aruba */,
+				BB2E5D611E79733F00768B60 /* Inbox */,
 				BB2E5D451E796E2600768B60 /* Main.storyboard */,
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
@@ -80,6 +92,33 @@
 				BB2E5D3D1E796E2600768B60 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB2E5D561E7972EE00768B60 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E5D571E79730400768B60 /* HomeViewController.h */,
+				BB2E5D581E79730400768B60 /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		BB2E5D5D1E79732000768B60 /* Aruba */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E5D5A1E79731B00768B60 /* MapViewController.h */,
+				BB2E5D5B1E79731B00768B60 /* MapViewController.m */,
+			);
+			name = Aruba;
+			sourceTree = "<group>";
+		};
+		BB2E5D611E79733F00768B60 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E5D5E1E79733B00768B60 /* AnnouncementsViewController.h */,
+				BB2E5D5F1E79733B00768B60 /* AnnouncementsViewController.m */,
+			);
+			name = Inbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,8 +152,8 @@
 				TargetAttributes = {
 					BB2E5D381E796E2600768B60 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = E7648RUX85;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 79YLMQ62DM;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -155,8 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2E5D441E796E2600768B60 /* ViewController.m in Sources */,
+				BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */,
 				BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
+				BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */,
+				BB2E5D591E79730400768B60 /* HomeViewController.m in Sources */,
 				BB2E5D3E1E796E2600768B60 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +319,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E7648RUX85;
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nascenia.Shippax-Conf--17";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";
 			};
 			name = Debug;
 		};
@@ -289,11 +333,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E7648RUX85;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nascenia.Shippax-Conf--17";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";
 			};
 			name = Release;
 		};
