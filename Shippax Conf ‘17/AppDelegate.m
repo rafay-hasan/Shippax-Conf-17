@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Meridian/Meridian.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    MRConfig *config = [MRConfig new];
+    config.applicationToken = [[NSBundle mainBundle]objectForInfoDictionaryKey:@"DeviceToken"];
+    [Meridian configure:config];
+
+    
     return YES;
 }
 

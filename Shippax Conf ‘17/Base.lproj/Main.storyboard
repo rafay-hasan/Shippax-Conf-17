@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="hYL-Wf-e5O">
             <objects>
                 <viewController id="nO6-SE-etR" customClass="MapViewController" sceneMemberID="viewController">
@@ -22,16 +23,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bgY-8l-D1S"/>
+                    <navigationItem key="navigationItem" title="Map" id="bgY-8l-D1S">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="0Bw-B4-gCP">
+                                <connections>
+                                    <action selector="mapRefreshAction:" destination="nO6-SE-etR" id="Rcb-oR-b6Q"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Direction" id="Sip-QI-YTd">
+                                <connections>
+                                    <action selector="mapDirectionAction:" destination="nO6-SE-etR" id="3Hx-NW-gRH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJi-NU-YKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1249" y="1254"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="xQr-Cs-kdP">
             <objects>
-                <viewController id="NO0-c5-8qQ" sceneMemberID="viewController">
+                <viewController id="NO0-c5-8qQ" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ggv-6s-lis"/>
                         <viewControllerLayoutGuide type="bottom" id="bGw-Mx-hFZ"/>
@@ -39,13 +53,30 @@
                     <view key="view" contentMode="scaleToFill" id="wJg-iy-KKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1J-xk-IRI" customClass="KASlideShow">
+                                <rect key="frame" x="8" y="72" width="359" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="YnP-i1-AmH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A1J-xk-IRI" firstAttribute="leading" secondItem="wJg-iy-KKN" secondAttribute="leading" constant="8" id="OvN-dU-TXk"/>
+                            <constraint firstItem="A1J-xk-IRI" firstAttribute="top" secondItem="Ggv-6s-lis" secondAttribute="bottom" constant="8" id="Ubo-av-osE"/>
+                            <constraint firstAttribute="trailing" secondItem="A1J-xk-IRI" secondAttribute="trailing" constant="8" id="nuf-XC-7XB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vJi-dh-EZi"/>
+                    <connections>
+                        <outlet property="slideShow" destination="A1J-xk-IRI" id="Jfx-1N-Rsk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRo-uh-nvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311" y="1254"/>
+            <point key="canvasLocation" x="532" y="1254"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t24-oV-8Il">
@@ -74,7 +105,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lui-8s-xc8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="2lj-gI-kjY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UiQ-XS-6IV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UiQ-XS-6IV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -93,7 +124,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qL7-jO-WVE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" id="lPr-Gy-tOF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3e4-bd-J5o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3e4-bd-J5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -131,7 +162,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bNW-Jy-gQA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Announcements" id="FDJ-ax-Hfk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GbD-u2-rnv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GbD-u2-rnv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -169,7 +200,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vN0-7z-6bx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Programme" id="6ci-as-55c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Fu-WC-fxO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5Fu-WC-fxO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -207,7 +238,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21m-EI-lG5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="More" id="ZE1-lj-EL2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="exa-aS-Xhz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="exa-aS-Xhz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
