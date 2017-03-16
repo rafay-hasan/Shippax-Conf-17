@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB10350D1E7AB39A009B9AE6 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */; };
+		BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */; };
+		BB1035141E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */; };
+		BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035161E7ACB3C009B9AE6 /* RHWebServiceManager.m */; };
 		BB2E5D3E1E796E2600768B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D3D1E796E2600768B60 /* main.m */; };
 		BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D401E796E2600768B60 /* AppDelegate.m */; };
 		BB2E5D441E796E2600768B60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D431E796E2600768B60 /* ViewController.m */; };
@@ -50,6 +54,14 @@
 		2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shippax Conf .a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		646275BB1B17C5687409AC98 /* Pods-Shippax Conf .debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shippax Conf .debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shippax Conf /Pods-Shippax Conf .debug.xcconfig"; sourceTree = "<group>"; };
 		AA5835BB1938CD2BB1B218D9 /* Pods-Shippax Conf .release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shippax Conf .release.xcconfig"; path = "Pods/Target Support Files/Pods-Shippax Conf /Pods-Shippax Conf .release.xcconfig"; sourceTree = "<group>"; };
+		BB10350B1E7AB39A009B9AE6 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		BB10350F1E7AB3ED009B9AE6 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
+		BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
+		BB1035121E7AC64C009B9AE6 /* SpeakersCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersCollectionViewCell.h; sourceTree = "<group>"; };
+		BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersCollectionViewCell.m; sourceTree = "<group>"; };
+		BB1035151E7ACB3C009B9AE6 /* RHWebServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHWebServiceManager.h; sourceTree = "<group>"; };
+		BB1035161E7ACB3C009B9AE6 /* RHWebServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHWebServiceManager.m; sourceTree = "<group>"; };
 		BB2E5D391E796E2600768B60 /* Shippax Conf .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shippax Conf .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2E5D3D1E796E2600768B60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB2E5D3F1E796E2600768B60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +154,44 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BB10350A1E7AB382009B9AE6 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				BB10350B1E7AB39A009B9AE6 /* MoreViewController.h */,
+				BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		BB10350E1E7AB3D6009B9AE6 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				BB10350F1E7AB3ED009B9AE6 /* SpeakersViewController.h */,
+				BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */,
+				BB1035121E7AC64C009B9AE6 /* SpeakersCollectionViewCell.h */,
+				BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */,
+			);
+			name = Speakers;
+			sourceTree = "<group>";
+		};
+		BB1035181E7ACB44009B9AE6 /* KASlider */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E5D791E79852400768B60 /* KASlideShow.h */,
+				BB2E5D7A1E79852400768B60 /* KASlideShow.m */,
+			);
+			name = KASlider;
+			sourceTree = "<group>";
+		};
+		BB1035191E7ACB4C009B9AE6 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				BB1035151E7ACB3C009B9AE6 /* RHWebServiceManager.h */,
+				BB1035161E7ACB3C009B9AE6 /* RHWebServiceManager.m */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
 		BB2E5D301E796E2600768B60 = {
 			isa = PBXGroup;
 			children = (
@@ -168,11 +218,13 @@
 				BB2E5DA81E7988CF00768B60 /* SDWebImage */,
 				BB2E5D421E796E2600768B60 /* ViewController.h */,
 				BB2E5D431E796E2600768B60 /* ViewController.m */,
-				BB2E5D791E79852400768B60 /* KASlideShow.h */,
-				BB2E5D7A1E79852400768B60 /* KASlideShow.m */,
+				BB1035181E7ACB44009B9AE6 /* KASlider */,
+				BB1035191E7ACB4C009B9AE6 /* WebService */,
 				BB2E5D561E7972EE00768B60 /* Home */,
 				BB2E5D5D1E79732000768B60 /* Aruba */,
 				BB2E5D611E79733F00768B60 /* Inbox */,
+				BB10350A1E7AB382009B9AE6 /* More */,
+				BB10350E1E7AB3D6009B9AE6 /* Speakers */,
 				BB2E5D451E796E2600768B60 /* Main.storyboard */,
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
@@ -399,17 +451,21 @@
 			files = (
 				BB2E5DCF1E7988CF00768B60 /* UIImage+GIF.m in Sources */,
 				BB2E5DC81E7988CF00768B60 /* SDWebImageCompat.m in Sources */,
+				BB10350D1E7AB39A009B9AE6 /* MoreViewController.m in Sources */,
+				BB1035141E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m in Sources */,
 				BB2E5DCE1E7988CF00768B60 /* UIButton+WebCache.m in Sources */,
 				BB2E5DD01E7988CF00768B60 /* UIImage+MultiFormat.m in Sources */,
 				BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */,
 				BB2E5DCD1E7988CF00768B60 /* SDWebImagePrefetcher.m in Sources */,
 				BB2E5D441E796E2600768B60 /* ViewController.m in Sources */,
+				BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */,
 				BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */,
 				BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */,
 				BB2E5DCB1E7988CF00768B60 /* SDWebImageDownloaderOperation.m in Sources */,
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
+				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
 				BB2E5DC61E7988CF00768B60 /* NSData+ImageContentType.m in Sources */,
 				BB2E5DCA1E7988CF00768B60 /* SDWebImageDownloader.m in Sources */,
 				BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */,
