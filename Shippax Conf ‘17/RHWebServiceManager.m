@@ -7,6 +7,7 @@
 //
 
 #import "RHWebServiceManager.h"
+#import "SpeakerWebServiceObject.h"
 //#import "TopLevelObjectsSharedInstances.h"
 
 @implementation RHWebServiceManager
@@ -42,28 +43,28 @@
          
          NSLog(@"status code is %@",responseObject);
          
-         if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-         {
-             [self.delegate dataFromWebReceivedSuccessfully:responseObject];
-         }
-         
-         //if([self.delegate conformsToProtocol:@protocol(RHWebServiceDelegate)])
+//         if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
 //         {
-//             if(self.requestType == HTTPRequestTypeSpeakers)
-//             {
-//                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                 {
-//                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllSpeakerItems:responseObject]];
-//                 }
-//             }
-//             else if(self.requestType == HTTPRequestTypeProgramme)
-//             {
-//                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                 {
-//                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllSpeakerItems:responseObject]];
-//                 }
-//             }
+//             [self.delegate dataFromWebReceivedSuccessfully:responseObject];
 //         }
+         
+         if([self.delegate conformsToProtocol:@protocol(RHWebServiceDelegate)])
+         {
+             if(self.requestType == HTTPRequestTypeSpeakers)
+             {
+                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                 {
+                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllSpeakerItems:responseObject]];
+                 }
+             }
+             else if(self.requestType == HTTPRequestTypeProgramme)
+             {
+                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                 {
+                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllSpeakerItems:responseObject]];
+                 }
+             }
+         }
          
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error)
@@ -133,6 +134,13 @@
     NSArray *tempArray = (NSArray *)response;
     for(NSInteger i = 0; i< tempArray.count; i++)
     {
+        SpeakerWebServiceObject *object = [SpeakerWebServiceObject new];
+        
+        object.speakerName = [[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"title"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        object.speakerDetails = [[tempArray objectAtIndex:i]valueForKey:@"description"];
+        object.speakerImageUrlStr = [[tempArray objectAtIndex:i]valueForKey:@"imageUrl"];
+        
+        [speakerItemsArray addObject:object];
     }
     
     return speakerItemsArray;

@@ -11,6 +11,7 @@
 #import "RHWebServiceManager.h"
 #import "UIImageView+AFNetworking.h"
 #import "SpeakersCollectionViewCell.h"
+#import "SpeakerWebServiceObject.h"
 
 @interface SpeakersViewController ()<KASlideShowDelegate,KASlideShowDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate,UIWebViewDelegate>
 {
@@ -23,7 +24,7 @@
 
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *speakersDataArray;
-
+@property (strong,nonatomic) SpeakerWebServiceObject *speakerObject;
 
 @end
 
@@ -33,21 +34,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.speakerObject = [SpeakerWebServiceObject new];
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection  = UICollectionViewScrollDirectionHorizontal;
     [self.speakerCollectionView setCollectionViewLayout:flowLayout];
     
     self.slideShow.datasource = self;
     self.slideShow.delegate = self;
-    [self.slideShow setDelay:.5]; // Delay between transitions
+    [self.slideShow setDelay:2]; // Delay between transitions
     [self.slideShow setTransitionDuration:1]; // Transition duration
     [self.slideShow setTransitionType:KASlideShowTransitionSlideHorizontal]; // Choose a transition type (fade or slide)
     [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
     [self.slideShow addGesture:KASlideShowGestureSwipe]; // Gesture to go previous/next directly on the image
     
-    _datasource = [@[[UIImage imageNamed:@"slider-image"],
-                     [UIImage imageNamed:@"slider-image"],
-                     [UIImage imageNamed:@"slider-image"]] mutableCopy];
+    _datasource = [@[[UIImage imageNamed:@"slider1"],
+                     [UIImage imageNamed:@"slider2"],
+                     [UIImage imageNamed:@"slider3"],
+                     [UIImage imageNamed:@"slider4"]] mutableCopy];
 
 }
 
@@ -103,19 +107,23 @@
     static NSString *identifier = @"SpeakerCell";
     
     SpeakersCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell.speakerImageView setImageWithURL:[NSURL URLWithString:[[self.speakersDataArray objectAtIndex:indexPath.row] valueForKey:@"imageUrl"]]];
-   // [cell.speakerImageView setImageWithURL:[NSURL URLWithString:[[self.speakersDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"] placeholderImage:[UIImage imageNamed:@"SpeakerPlaceholder"]];
+    
+    self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
+    cell.speakerName.attributedText = self.speakerObject.speakerName;
+    [cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr]];
+   
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self loadDetailsWebview:indexPath.row];
+    self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
+    [self loadDetailsWebview:self.speakerObject.speakerDetails];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(100.0, 100.0);
+    return CGSizeMake(96.0, 96.0);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
@@ -143,7 +151,9 @@
     {
         NSArray *tempArray = (NSArray *)responseObj;
         self.speakersDataArray = [NSArray arrayWithArray:tempArray];
-        [self loadDetailsWebview:0];
+        self.speakerObject = [self.speakersDataArray objectAtIndex:0];
+        [self loadDetailsWebview:self.speakerObject.speakerDetails];
+
         [self.speakerCollectionView reloadData];
     }
 }
@@ -162,11 +172,11 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void) loadDetailsWebview:(NSInteger)index
+-(void) loadDetailsWebview:(NSString *)details
 {
     self.speakerDetailWebview.opaque = NO;
-    self.speakerDetailWebview.backgroundColor = [UIColor clearColor];
-    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#000000;'>%@",[[self.speakersDataArray objectAtIndex:index]valueForKey:@"description"]];
+    self.speakerDetailWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",details];
     [self.speakerDetailWebview loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
     self.speakerDetailWebview.delegate = self;
     self.speakerDetailWebview.scrollView.scrollEnabled = YES;

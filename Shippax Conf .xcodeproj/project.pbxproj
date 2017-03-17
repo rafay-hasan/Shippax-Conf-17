@@ -47,6 +47,7 @@
 		BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m */; };
 		BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */; };
 		BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */; };
+		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
 		D30C12B206385721D9CAA56A /* libPods-Shippax Conf .a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,8 @@
 		BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BB2E5DC41E7988CF00768B60 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
+		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */,
 				BB1035121E7AC64C009B9AE6 /* SpeakersCollectionViewCell.h */,
 				BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */,
+				BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */,
+				BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */,
 			);
 			name = Speakers;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
+				BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */,
 				BB2E5DC61E7988CF00768B60 /* NSData+ImageContentType.m in Sources */,
 				BB2E5DCA1E7988CF00768B60 /* SDWebImageDownloader.m in Sources */,
 				BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */,

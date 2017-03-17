@@ -32,9 +32,10 @@
     [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
     [self.slideShow addGesture:KASlideShowGestureSwipe]; // Gesture to go previous/next directly on the image
     
-    _datasource = [@[[UIImage imageNamed:@"slider-image"],
-                     [UIImage imageNamed:@"slider-image"],
-                     [UIImage imageNamed:@"slider-image"]] mutableCopy];
+    _datasource = [@[[UIImage imageNamed:@"slider1"],
+                     [UIImage imageNamed:@"slider2"],
+                     [UIImage imageNamed:@"slider3"],
+                     [UIImage imageNamed:@"slider4"]] mutableCopy];
 }
 
 -(void) viewDidAppear:(BOOL)animated

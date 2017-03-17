@@ -11,6 +11,7 @@
 @interface SpeakersCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *speakerName;
 
 
 @end
