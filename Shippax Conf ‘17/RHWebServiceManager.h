@@ -15,7 +15,8 @@
 
 enum {
     HTTPRequestTypeSpeakers,
-    HTTPRequestTypeProgramme
+    HTTPRequestTypeProgramme,
+    HTTPRequestTypeHome
 };
 typedef NSUInteger HTTPRequestType;
 

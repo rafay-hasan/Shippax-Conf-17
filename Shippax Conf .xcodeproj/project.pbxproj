@@ -47,6 +47,8 @@
 		BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m */; };
 		BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */; };
 		BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */; };
+		BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */; };
+		BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */; };
 		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
 		D30C12B206385721D9CAA56A /* libPods-Shippax Conf .a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */; };
 /* End PBXBuildFile section */
@@ -122,6 +124,10 @@
 		BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BB2E5DC41E7988CF00768B60 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BB3BCFD91E7FB0E5007B1EE0 /* HomeWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWebServiceObject.h; sourceTree = "<group>"; };
+		BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWebServiceObject.m; sourceTree = "<group>"; };
+		BB3BCFDC1E7FB3DE007B1EE0 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
 		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +259,10 @@
 			children = (
 				BB2E5D571E79730400768B60 /* HomeViewController.h */,
 				BB2E5D581E79730400768B60 /* HomeViewController.m */,
+				BB3BCFDC1E7FB3DE007B1EE0 /* HomeTableViewCell.h */,
+				BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */,
+				BB3BCFD91E7FB0E5007B1EE0 /* HomeWebServiceObject.h */,
+				BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -465,11 +475,13 @@
 				BB2E5D441E796E2600768B60 /* ViewController.m in Sources */,
 				BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */,
 				BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */,
+				BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */,
 				BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */,
 				BB2E5DCB1E7988CF00768B60 /* SDWebImageDownloaderOperation.m in Sources */,
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
+				BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */,
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
 				BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */,
 				BB2E5DC61E7988CF00768B60 /* NSData+ImageContentType.m in Sources */,

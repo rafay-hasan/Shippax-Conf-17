@@ -8,7 +8,7 @@
 
 #import "RHWebServiceManager.h"
 #import "SpeakerWebServiceObject.h"
-//#import "TopLevelObjectsSharedInstances.h"
+#import "HomeWebServiceObject.h"
 
 @implementation RHWebServiceManager
 
@@ -62,6 +62,13 @@
                  if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
                  {
                      [self.delegate dataFromWebReceivedSuccessfully:[self parseAllSpeakerItems:responseObject]];
+                 }
+             }
+             else if(self.requestType == HTTPRequestTypeHome)
+             {
+                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                 {
+                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllHomeItems:responseObject]];
                  }
              }
          }
@@ -145,6 +152,38 @@
     
     return speakerItemsArray;
 }
+
+-(NSMutableArray *) parseAllHomeItems :(id) response
+{
+    NSMutableArray *homeItemsArray = [NSMutableArray new];
+    
+    NSArray *tempArray = (NSArray *)response;
+    for(NSInteger i = 0; i< tempArray.count; i++)
+    {
+        HomeWebServiceObject *object = [HomeWebServiceObject new];
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"title"] isKindOfClass:[NSString class]])
+        {
+            object.homeTitle  = [[tempArray objectAtIndex:i] valueForKey:@"title"];
+        }
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"description"] isKindOfClass:[NSString class]])
+        {
+            object.homeDescription  = [[tempArray objectAtIndex:i] valueForKey:@"description"];
+        }
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"imageUrl"] isKindOfClass:[NSString class]])
+        {
+            object.homeImageUrlStr  = [[tempArray objectAtIndex:i] valueForKey:@"imageUrl"];
+        }
+        
+        
+        [homeItemsArray addObject:object];
+    }
+    
+    return homeItemsArray;
+}
+
 
 -(NSMutableArray *) parseAllTopLevelItems :(id) response
 {
@@ -244,22 +283,22 @@
 
 
 
--(NSMutableArray *) parseAllHomeItems :(id) response
-{
-    NSMutableArray *homeItemsArray = [NSMutableArray new];
-    
-    NSArray *tempArray = (NSArray *)response;
-    
-    
-    //NSLog(@"array is %@",tempArray);
-    
-    for(NSInteger i = 0; i < tempArray.count; i++)
-    {
-        ;
-    }
-    
-    return homeItemsArray;
-}
+//-(NSMutableArray *) parseAllHomeItems :(id) response
+//{
+//    NSMutableArray *homeItemsArray = [NSMutableArray new];
+//    
+//    NSArray *tempArray = (NSArray *)response;
+//    
+//    
+//    //NSLog(@"array is %@",tempArray);
+//    
+//    for(NSInteger i = 0; i < tempArray.count; i++)
+//    {
+//        ;
+//    }
+//    
+//    return homeItemsArray;
+//}
 
 -(NSMutableArray *) parseAllChildItems :(id) response
 {
