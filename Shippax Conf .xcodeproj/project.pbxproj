@@ -49,6 +49,16 @@
 		BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */; };
 		BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */; };
 		BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */; };
+		BB3BCFE11E800D68007B1EE0 /* StreamingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFE01E800D68007B1EE0 /* StreamingConnection.m */; };
+		BB3BCFE51E800D97007B1EE0 /* Inbox Shared Object.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFE41E800D97007B1EE0 /* Inbox Shared Object.m */; };
+		BB3BCFE81E800DCB007B1EE0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFE71E800DCB007B1EE0 /* Reachability.m */; };
+		BB3BCFEC1E801064007B1EE0 /* MessageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFEB1E801064007B1EE0 /* MessageObject.m */; };
+		BB3BCFEF1E801294007B1EE0 /* InboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFEE1E801294007B1EE0 /* InboxTableViewCell.m */; };
+		BB3BCFF31E801ECD007B1EE0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFF21E801ECD007B1EE0 /* AboutViewController.m */; };
+		BB3BCFF61E802002007B1EE0 /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFF51E802002007B1EE0 /* About.html */; };
+		BB3BCFF91E802357007B1EE0 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */; };
+		BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */; };
+		BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */; };
 		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
 		D30C12B206385721D9CAA56A /* libPods-Shippax Conf .a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */; };
 /* End PBXBuildFile section */
@@ -128,6 +138,23 @@
 		BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWebServiceObject.m; sourceTree = "<group>"; };
 		BB3BCFDC1E7FB3DE007B1EE0 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		BB3BCFDF1E800D68007B1EE0 /* StreamingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingConnection.h; sourceTree = "<group>"; };
+		BB3BCFE01E800D68007B1EE0 /* StreamingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingConnection.m; sourceTree = "<group>"; };
+		BB3BCFE31E800D97007B1EE0 /* Inbox Shared Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Inbox Shared Object.h"; sourceTree = "<group>"; };
+		BB3BCFE41E800D97007B1EE0 /* Inbox Shared Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Inbox Shared Object.m"; sourceTree = "<group>"; };
+		BB3BCFE61E800DCB007B1EE0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BB3BCFE71E800DCB007B1EE0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BB3BCFEA1E801064007B1EE0 /* MessageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageObject.h; sourceTree = "<group>"; };
+		BB3BCFEB1E801064007B1EE0 /* MessageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageObject.m; sourceTree = "<group>"; };
+		BB3BCFED1E801294007B1EE0 /* InboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxTableViewCell.h; sourceTree = "<group>"; };
+		BB3BCFEE1E801294007B1EE0 /* InboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewCell.m; sourceTree = "<group>"; };
+		BB3BCFF11E801ECD007B1EE0 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		BB3BCFF21E801ECD007B1EE0 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		BB3BCFF51E802002007B1EE0 /* About.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About.html; sourceTree = "<group>"; };
+		BB3BCFF71E802357007B1EE0 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
+		BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
+		BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = firstVideo.html; sourceTree = "<group>"; };
+		BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = secondVideo.html; sourceTree = "<group>"; };
 		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
 		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +253,8 @@
 			children = (
 				BB2E5D3F1E796E2600768B60 /* AppDelegate.h */,
 				BB2E5D401E796E2600768B60 /* AppDelegate.m */,
+				BB3BCFE91E800DCF007B1EE0 /* Reachibility */,
+				BB3BCFE21E800D6D007B1EE0 /* SignalR */,
 				BB2E5DA81E7988CF00768B60 /* SDWebImage */,
 				BB2E5D421E796E2600768B60 /* ViewController.h */,
 				BB2E5D431E796E2600768B60 /* ViewController.m */,
@@ -236,10 +265,14 @@
 				BB2E5D611E79733F00768B60 /* Inbox */,
 				BB10350A1E7AB382009B9AE6 /* More */,
 				BB10350E1E7AB3D6009B9AE6 /* Speakers */,
+				BB3BCFF41E801ED3007B1EE0 /* About */,
 				BB2E5D451E796E2600768B60 /* Main.storyboard */,
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
 				BB2E5D501E796E2700768B60 /* Info.plist */,
+				BB3BCFF51E802002007B1EE0 /* About.html */,
+				BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */,
+				BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */,
 				BB2E5D481E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld */,
 				BB2E5D3C1E796E2600768B60 /* Supporting Files */,
 			);
@@ -279,8 +312,14 @@
 		BB2E5D611E79733F00768B60 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
+				BB3BCFE31E800D97007B1EE0 /* Inbox Shared Object.h */,
+				BB3BCFE41E800D97007B1EE0 /* Inbox Shared Object.m */,
+				BB3BCFEA1E801064007B1EE0 /* MessageObject.h */,
+				BB3BCFEB1E801064007B1EE0 /* MessageObject.m */,
 				BB2E5D5E1E79733B00768B60 /* AnnouncementsViewController.h */,
 				BB2E5D5F1E79733B00768B60 /* AnnouncementsViewController.m */,
+				BB3BCFED1E801294007B1EE0 /* InboxTableViewCell.h */,
+				BB3BCFEE1E801294007B1EE0 /* InboxTableViewCell.m */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -338,6 +377,35 @@
 				BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		BB3BCFE21E800D6D007B1EE0 /* SignalR */ = {
+			isa = PBXGroup;
+			children = (
+				BB3BCFDF1E800D68007B1EE0 /* StreamingConnection.h */,
+				BB3BCFE01E800D68007B1EE0 /* StreamingConnection.m */,
+			);
+			name = SignalR;
+			sourceTree = "<group>";
+		};
+		BB3BCFE91E800DCF007B1EE0 /* Reachibility */ = {
+			isa = PBXGroup;
+			children = (
+				BB3BCFE61E800DCB007B1EE0 /* Reachability.h */,
+				BB3BCFE71E800DCB007B1EE0 /* Reachability.m */,
+			);
+			name = Reachibility;
+			sourceTree = "<group>";
+		};
+		BB3BCFF41E801ED3007B1EE0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BB3BCFF11E801ECD007B1EE0 /* AboutViewController.h */,
+				BB3BCFF21E801ECD007B1EE0 /* AboutViewController.m */,
+				BB3BCFF71E802357007B1EE0 /* AboutTableViewCell.h */,
+				BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,7 +471,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2E5D781E79744A00768B60 /* Meridian.bundle in Resources */,
+				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
+				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
 				BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */,
+				BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */,
 				BB2E5D4C1E796E2700768B60 /* Assets.xcassets in Resources */,
 				BB2E5D471E796E2600768B60 /* Main.storyboard in Resources */,
 			);
@@ -468,18 +539,22 @@
 				BB2E5DC81E7988CF00768B60 /* SDWebImageCompat.m in Sources */,
 				BB10350D1E7AB39A009B9AE6 /* MoreViewController.m in Sources */,
 				BB1035141E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m in Sources */,
+				BB3BCFE11E800D68007B1EE0 /* StreamingConnection.m in Sources */,
 				BB2E5DCE1E7988CF00768B60 /* UIButton+WebCache.m in Sources */,
 				BB2E5DD01E7988CF00768B60 /* UIImage+MultiFormat.m in Sources */,
 				BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */,
 				BB2E5DCD1E7988CF00768B60 /* SDWebImagePrefetcher.m in Sources */,
+				BB3BCFF91E802357007B1EE0 /* AboutTableViewCell.m in Sources */,
 				BB2E5D441E796E2600768B60 /* ViewController.m in Sources */,
 				BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */,
 				BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */,
 				BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */,
 				BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */,
 				BB2E5DCB1E7988CF00768B60 /* SDWebImageDownloaderOperation.m in Sources */,
+				BB3BCFEC1E801064007B1EE0 /* MessageObject.m in Sources */,
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
+				BB3BCFEF1E801294007B1EE0 /* InboxTableViewCell.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
 				BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */,
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
@@ -489,10 +564,13 @@
 				BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */,
 				BB2E5D591E79730400768B60 /* HomeViewController.m in Sources */,
 				BB2E5D7B1E79852400768B60 /* KASlideShow.m in Sources */,
+				BB3BCFE81E800DCB007B1EE0 /* Reachability.m in Sources */,
 				BB2E5DCC1E7988CF00768B60 /* SDWebImageManager.m in Sources */,
 				BB2E5D3E1E796E2600768B60 /* main.m in Sources */,
+				BB3BCFF31E801ECD007B1EE0 /* AboutViewController.m in Sources */,
 				BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BB2E5DC71E7988CF00768B60 /* SDImageCache.m in Sources */,
+				BB3BCFE51E800D97007B1EE0 /* Inbox Shared Object.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

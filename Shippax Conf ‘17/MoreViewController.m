@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "SpeakersViewController.h"
+#import "AboutViewController.h"
 
 @interface MoreViewController ()
 
@@ -18,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    //self.mor.estimatedRowHeight = 50;
+    //self.homeTableView.rowHeight = UITableViewAutomaticDimension;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,11 +97,11 @@
         SpeakersViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Speakers"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-//    else if(indexPath.section == 1)
-//    {
-//        ExhibitorsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"exhibitors"];
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
+    else if(indexPath.section == 3)
+    {
+        AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 //    else if(indexPath.section == 2)
 //    {
 //        AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
