@@ -34,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"Speakers";
+    
     self.speakerObject = [SpeakerWebServiceObject new];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

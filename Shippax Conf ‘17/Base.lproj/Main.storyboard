@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="1249" y="1254"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="xQr-Cs-kdP">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="NO0-c5-8qQ" customClass="HomeViewController" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                             <constraint firstAttribute="trailing" secondItem="wag-Mc-lAs" secondAttribute="trailing" constant="8" id="sVi-MN-oQ2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vJi-dh-EZi"/>
+                    <navigationItem key="navigationItem" title="Home" id="vJi-dh-EZi"/>
                     <connections>
                         <outlet property="homeTableView" destination="wag-Mc-lAs" id="q6g-Az-Agh"/>
                         <outlet property="slideShow" destination="A1J-xk-IRI" id="Jfx-1N-Rsk"/>
@@ -289,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="3345" y="481"/>
         </scene>
-        <!--More View Controller-->
+        <!--More-->
         <scene sceneID="NvS-ym-az9">
             <objects>
-                <viewController id="2LM-yH-CuA" customClass="MoreViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="2LM-yH-CuA" customClass="MoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qfQ-kL-r1D"/>
                         <viewControllerLayoutGuide type="bottom" id="XrL-Z0-yjD"/>
@@ -301,27 +301,56 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocz-wf-7Jd">
-                                <rect key="frame" x="150" y="156" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fck-ZB-Ohn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-kP-ck3">
+                                <rect key="frame" x="16" y="16" width="343" height="522"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreCell" id="b9b-TJ-K9N">
+                                        <rect key="frame" x="0.0" y="56" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b9b-TJ-K9N" id="ERr-EW-A7l">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="8Ar-RC-MY8" kind="show" id="Amq-Qc-x6Y"/>
+                                    <outlet property="dataSource" destination="2LM-yH-CuA" id="V03-vX-LzN"/>
+                                    <outlet property="delegate" destination="2LM-yH-CuA" id="9sE-kx-6z2"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fck-ZB-Ohn" firstAttribute="leading" secondItem="7ox-f3-O4T" secondAttribute="leading" id="7nz-sE-Mfd"/>
+                            <constraint firstItem="fck-ZB-Ohn" firstAttribute="top" secondItem="7ox-f3-O4T" secondAttribute="top" id="Rx6-oH-N7a"/>
+                            <constraint firstAttribute="trailing" secondItem="fck-ZB-Ohn" secondAttribute="trailing" id="Ukh-ad-MK8"/>
+                            <constraint firstItem="4U2-kP-ck3" firstAttribute="top" secondItem="qfQ-kL-r1D" secondAttribute="bottom" constant="16" id="XFY-N8-iXR"/>
+                            <constraint firstAttribute="trailing" secondItem="4U2-kP-ck3" secondAttribute="trailing" constant="16" id="bMH-oZ-cQz"/>
+                            <constraint firstItem="XrL-Z0-yjD" firstAttribute="top" secondItem="4U2-kP-ck3" secondAttribute="bottom" constant="16" id="epp-kV-eeD"/>
+                            <constraint firstItem="4U2-kP-ck3" firstAttribute="leading" secondItem="7ox-f3-O4T" secondAttribute="leading" constant="16" id="feU-pg-L6m"/>
+                            <constraint firstAttribute="bottom" secondItem="fck-ZB-Ohn" secondAttribute="bottom" id="qX0-r4-I3I"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mLN-il-Nak"/>
+                    <navigationItem key="navigationItem" title="More" id="mLN-il-Nak"/>
+                    <connections>
+                        <segue destination="8Ar-RC-MY8" kind="show" id="Uou-ld-wkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQz-g3-TOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4436" y="1254"/>
+            <point key="canvasLocation" x="4436" y="1253.5232383808097"/>
         </scene>
         <!--Speakers View Controller-->
         <scene sceneID="DfQ-fL-oms">
             <objects>
-                <viewController id="8Ar-RC-MY8" customClass="SpeakersViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Speakers" id="8Ar-RC-MY8" customClass="SpeakersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WsE-Ws-z1Y"/>
                         <viewControllerLayoutGuide type="bottom" id="RuS-AE-WzE"/>
