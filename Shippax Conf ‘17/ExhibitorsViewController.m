@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "ExhibitorCollectionViewCell.h"
 #import "SponsorCollectionReusableView.h"
+#import "SponsorDetailsViewController.h"
 
 @interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource>
 {  
@@ -135,11 +136,25 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"] isKindOfClass:[NSString class]])
-   {
-       NSURL *requestedURL = [NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"]];
-       [[UIApplication sharedApplication] openURL:requestedURL];
-   }
+    if(indexPath.section == 0)
+    {
+        SponsorDetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"sponsorDetails"];
+        
+        if(indexPath.row == 0)
+            vc.fileName = @"MainSponsor";
+        else
+            vc.fileName = @"DNVGL";
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"] isKindOfClass:[NSString class]])
+        {
+            NSURL *requestedURL = [NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"]];
+            [[UIApplication sharedApplication] openURL:requestedURL];
+        }
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BB0D43241E816FFB00F9D117 /* SponsorCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0D43231E816FFB00F9D117 /* SponsorCollectionReusableView.m */; };
+		BB0D43271E8176C900F9D117 /* SponsorDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0D43261E8176C900F9D117 /* SponsorDetailsViewController.m */; };
+		BB0D43291E81794D00F9D117 /* DNVGL.html in Resources */ = {isa = PBXBuildFile; fileRef = BB0D43281E81794D00F9D117 /* DNVGL.html */; };
 		BB10350D1E7AB39A009B9AE6 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */; };
 		BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */; };
 		BB1035141E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */; };
@@ -73,6 +75,9 @@
 		AA5835BB1938CD2BB1B218D9 /* Pods-Shippax Conf .release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shippax Conf .release.xcconfig"; path = "Pods/Target Support Files/Pods-Shippax Conf /Pods-Shippax Conf .release.xcconfig"; sourceTree = "<group>"; };
 		BB0D43221E816FFB00F9D117 /* SponsorCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorCollectionReusableView.h; sourceTree = "<group>"; };
 		BB0D43231E816FFB00F9D117 /* SponsorCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorCollectionReusableView.m; sourceTree = "<group>"; };
+		BB0D43251E8176C900F9D117 /* SponsorDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorDetailsViewController.h; sourceTree = "<group>"; };
+		BB0D43261E8176C900F9D117 /* SponsorDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorDetailsViewController.m; sourceTree = "<group>"; };
+		BB0D43281E81794D00F9D117 /* DNVGL.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DNVGL.html; sourceTree = "<group>"; };
 		BB10350B1E7AB39A009B9AE6 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		BB10350F1E7AB3ED009B9AE6 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
@@ -283,6 +288,7 @@
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
 				BB2E5D501E796E2700768B60 /* Info.plist */,
 				BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */,
+				BB0D43281E81794D00F9D117 /* DNVGL.html */,
 				BB3BCFF51E802002007B1EE0 /* About.html */,
 				BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */,
 				BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */,
@@ -430,6 +436,8 @@
 				BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */,
 				BB0D43221E816FFB00F9D117 /* SponsorCollectionReusableView.h */,
 				BB0D43231E816FFB00F9D117 /* SponsorCollectionReusableView.m */,
+				BB0D43251E8176C900F9D117 /* SponsorDetailsViewController.h */,
+				BB0D43261E8176C900F9D117 /* SponsorDetailsViewController.m */,
 			);
 			name = Exhibitor;
 			sourceTree = "<group>";
@@ -496,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0D43291E81794D00F9D117 /* DNVGL.html in Resources */,
 				BB2E5D781E79744A00768B60 /* Meridian.bundle in Resources */,
 				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
 				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
@@ -596,6 +605,7 @@
 				BB3BCFE81E800DCB007B1EE0 /* Reachability.m in Sources */,
 				BB2E5DCC1E7988CF00768B60 /* SDWebImageManager.m in Sources */,
 				BB2E5D3E1E796E2600768B60 /* main.m in Sources */,
+				BB0D43271E8176C900F9D117 /* SponsorDetailsViewController.m in Sources */,
 				BB3BCFF31E801ECD007B1EE0 /* AboutViewController.m in Sources */,
 				BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */,

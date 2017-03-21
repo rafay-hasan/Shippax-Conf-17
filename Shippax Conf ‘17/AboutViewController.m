@@ -91,7 +91,7 @@
         NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
         [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
         cell.aboutWebView.opaque = NO;
-        cell.aboutWebView.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];//[UIColor clearColor];
+        cell.aboutWebView.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
         htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
         [cell.aboutWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString] baseURL:nil];
         cell.aboutWebView.delegate = self;

@@ -181,7 +181,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lui-8s-xc8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="2lj-gI-kjY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UiQ-XS-6IV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UiQ-XS-6IV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -200,7 +200,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qL7-jO-WVE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" id="lPr-Gy-tOF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3e4-bd-J5o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3e4-bd-J5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -327,7 +327,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bNW-Jy-gQA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Announcements" id="FDJ-ax-Hfk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GbD-u2-rnv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GbD-u2-rnv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -365,7 +365,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vN0-7z-6bx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Programme" id="6ci-as-55c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="5Fu-WC-fxO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5Fu-WC-fxO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -660,6 +660,46 @@
             </objects>
             <point key="canvasLocation" x="6205.6000000000004" y="1300.2998500749627"/>
         </scene>
+        <!--Sponsor Details View Controller-->
+        <scene sceneID="8K0-SZ-hBO">
+            <objects>
+                <viewController storyboardIdentifier="sponsorDetails" id="UiF-Ly-maU" customClass="SponsorDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mHH-0k-bdL"/>
+                        <viewControllerLayoutGuide type="bottom" id="dAM-OP-hb4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCP-KU-YeF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-QY-W7Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FX7-zF-oVH">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FX7-zF-oVH" secondAttribute="trailing" constant="8" id="0BI-sJ-b4Y"/>
+                            <constraint firstItem="FX7-zF-oVH" firstAttribute="top" secondItem="mHH-0k-bdL" secondAttribute="bottom" constant="8" id="Bpl-tG-htB"/>
+                            <constraint firstItem="dAM-OP-hb4" firstAttribute="top" secondItem="EyK-QY-W7Q" secondAttribute="bottom" id="IaS-WF-V2r"/>
+                            <constraint firstItem="FX7-zF-oVH" firstAttribute="leading" secondItem="GCP-KU-YeF" secondAttribute="leading" constant="8" id="JTy-SM-Rv8"/>
+                            <constraint firstAttribute="trailing" secondItem="EyK-QY-W7Q" secondAttribute="trailing" id="c1k-Fj-faF"/>
+                            <constraint firstItem="dAM-OP-hb4" firstAttribute="top" secondItem="FX7-zF-oVH" secondAttribute="bottom" constant="8" id="eBB-IV-Qiv"/>
+                            <constraint firstItem="EyK-QY-W7Q" firstAttribute="top" secondItem="GCP-KU-YeF" secondAttribute="top" id="eG8-pT-8O5"/>
+                            <constraint firstItem="EyK-QY-W7Q" firstAttribute="leading" secondItem="GCP-KU-YeF" secondAttribute="leading" id="n1V-te-ifz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sponsorWebview" destination="FX7-zF-oVH" id="Rn9-XA-EgL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zi-mf-b7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7024.8000000000002" y="1299.400299850075"/>
+        </scene>
         <!--About View Controller-->
         <scene sceneID="onq-sL-RLT">
             <objects>
@@ -740,7 +780,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21m-EI-lG5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="More" id="ZE1-lj-EL2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="exa-aS-Xhz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="exa-aS-Xhz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
