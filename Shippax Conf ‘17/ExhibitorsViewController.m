@@ -11,17 +11,15 @@
 #import "RHWebServiceManager.h"
 #import "UIImageView+AFNetworking.h"
 #import "ExhibitorCollectionViewCell.h"
-#import "ExhibitorTableViewCell.h"
-#import "MainSponsorTableViewCell.h"
-#import "ExihibitorHeaderView.h"
+#import "SponsorCollectionReusableView.h"
 
-@interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource,UITableViewDataSource,UITableViewDelegate>
+@interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource>
 {  
     NSMutableArray * _datasource;
 }
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
-@property (weak, nonatomic) IBOutlet UITableView *exhibitorTableview;
+@property (weak, nonatomic) IBOutlet UICollectionView *sponsorsCollectionview;
 
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *exhibitorsDataArray;
@@ -52,13 +50,6 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.exhibitorTableview.estimatedRowHeight = 120;
-    self.exhibitorTableview.rowHeight = UITableViewAutomaticDimension;
-    
-    UINib *headerNib = [UINib nibWithNibName:@"ExhibitorHeaderView" bundle:nil];
-    [self.exhibitorTableview registerNib:headerNib forHeaderFooterViewReuseIdentifier:@"header"];
-    self.exhibitorTableview.estimatedSectionHeaderHeight = 30;
-    self.exhibitorTableview.sectionHeaderHeight = UITableViewAutomaticDimension;
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -97,112 +88,48 @@
     return _datasource.count;
 }
 
-#pragma mark Tableview data source methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if(section == 0)
-        return 2;
-    else
-        return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == 0)
-    {
-        
-        static NSString *identifier = @"mainSponsorCell";
-        MainSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-        if(indexPath.row == 0)
-            cell.mainSponsorImageView.image = [UIImage imageNamed:@"main1"];
-        else
-            cell.mainSponsorImageView.image = [UIImage imageNamed:@"main2"];
-        //cell.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    else
-    {
-        static NSString *identifier = @"exhibitorSponsorCell";
-        ExhibitorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-        [cell.exhibitorCollectionview reloadData];
-        //cell.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    ExihibitorHeaderView *headerView = [self.exhibitorTableview dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-    
-    if(section == 0)
-        headerView.headerNameLabel.text = @"Main sponsors";
-    else
-        headerView.headerNameLabel.text = @"Exhibitors";
-    
-    return headerView;
-}
-
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 5.00;
-//}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 5.00;
-}
-
-
-
-
-- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *footerView = [[UIView alloc] init];
-    footerView.backgroundColor = [UIColor clearColor];
-    return footerView;
-}
-
-#pragma mark Web View Delegate Method
 
 
 #pragma mark - Collectionview datasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.exhibitorsDataArray.count;
+    if(section == 0)
+        return 2;
+    else
+        return self.exhibitorsDataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"collectionCell";
+    static NSString *identifier = @"sponsorCell";
     
     ExhibitorCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"] isKindOfClass:[NSString class]])
-        [cell.exhibitorImageView setImageWithURL:[NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"]]];
+    if(indexPath.section == 0)
+    {
+        if (indexPath.row == 0)
+        {
+            cell.exhibitorImageView.image = [UIImage imageNamed:@"main1"];
+        }
+        else
+        {
+            cell.exhibitorImageView.image = [UIImage imageNamed:@"main2"];
+        }
+    }
     else
-        cell.exhibitorImageView.image = nil;
-    
+    {
+        if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"] isKindOfClass:[NSString class]])
+            [cell.exhibitorImageView setImageWithURL:[NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"]]];
+        else
+            cell.exhibitorImageView.image = nil;
+
+    }
     return cell;
 }
 
@@ -217,7 +144,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(96.0, 96.0);
+    return CGSizeMake(116.0, 116.0);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
@@ -228,6 +155,24 @@
     return 8.0;
 }
 
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader)
+    {
+        SponsorCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerCell" forIndexPath:indexPath];
+       if(indexPath.section == 0)
+           headerView.headerTitleLabel.text = @"Main sponsors";
+        else
+            headerView.headerTitleLabel.text = @"Exhibitors";
+        
+        return headerView;
+    }
+    
+    return reusableview;
+}
 
 -(void) CallExhibitorWebservice
 {
@@ -248,7 +193,7 @@
         //self.speakerObject = [self.speakersDataArray objectAtIndex:0];
         //[self loadDetailsWebview:self.speakerObject.speakerDetails];
         
-        [self.exhibitorTableview reloadData];
+        [self.sponsorsCollectionview reloadData];
     }
 }
 

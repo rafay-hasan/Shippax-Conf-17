@@ -10,7 +10,7 @@
 
 @interface ExhibitorCollectionViewCell : UICollectionViewCell
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *exhibitorImageView;
+
 
 @end
