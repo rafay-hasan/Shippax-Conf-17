@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0D431F1E8164B200F9D117 /* ExihibitorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0D431E1E8164B200F9D117 /* ExihibitorHeaderView.m */; };
+		BB0D43211E8164D500F9D117 /* ExhibitorHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0D43201E8164D500F9D117 /* ExhibitorHeaderView.xib */; };
 		BB10350D1E7AB39A009B9AE6 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */; };
 		BB1035111E7AB3ED009B9AE6 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035101E7AB3ED009B9AE6 /* SpeakersViewController.m */; };
 		BB1035141E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1035131E7AC64C009B9AE6 /* SpeakersCollectionViewCell.m */; };
@@ -63,6 +65,8 @@
 		BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */; };
 		BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */; };
 		BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */ = {isa = PBXBuildFile; fileRef = BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */; };
+		BBF69BFB1E81335E004CA5C7 /* MainSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BFA1E81335E004CA5C7 /* MainSponsorTableViewCell.m */; };
+		BBF69BFE1E8134DA004CA5C7 /* ExhibitorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BFD1E8134DA004CA5C7 /* ExhibitorTableViewCell.m */; };
 		D30C12B206385721D9CAA56A /* libPods-Shippax Conf .a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,9 @@
 		2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shippax Conf .a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		646275BB1B17C5687409AC98 /* Pods-Shippax Conf .debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shippax Conf .debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shippax Conf /Pods-Shippax Conf .debug.xcconfig"; sourceTree = "<group>"; };
 		AA5835BB1938CD2BB1B218D9 /* Pods-Shippax Conf .release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shippax Conf .release.xcconfig"; path = "Pods/Target Support Files/Pods-Shippax Conf /Pods-Shippax Conf .release.xcconfig"; sourceTree = "<group>"; };
+		BB0D431D1E8164B200F9D117 /* ExihibitorHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExihibitorHeaderView.h; sourceTree = "<group>"; };
+		BB0D431E1E8164B200F9D117 /* ExihibitorHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExihibitorHeaderView.m; sourceTree = "<group>"; };
+		BB0D43201E8164D500F9D117 /* ExhibitorHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExhibitorHeaderView.xib; sourceTree = "<group>"; };
 		BB10350B1E7AB39A009B9AE6 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		BB10350C1E7AB39A009B9AE6 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		BB10350F1E7AB3ED009B9AE6 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
@@ -165,6 +172,10 @@
 		BBF69BF41E811321004CA5C7 /* ExhibitorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorCollectionViewCell.h; sourceTree = "<group>"; };
 		BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorCollectionViewCell.m; sourceTree = "<group>"; };
 		BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MainSponsor.html; sourceTree = "<group>"; };
+		BBF69BF91E81335E004CA5C7 /* MainSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSponsorTableViewCell.h; sourceTree = "<group>"; };
+		BBF69BFA1E81335E004CA5C7 /* MainSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSponsorTableViewCell.m; sourceTree = "<group>"; };
+		BBF69BFC1E8134DA004CA5C7 /* ExhibitorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorTableViewCell.h; sourceTree = "<group>"; };
+		BBF69BFD1E8134DA004CA5C7 /* ExhibitorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +287,7 @@
 				BBF69BF31E8110DF004CA5C7 /* Exhibitor */,
 				BB3BCFF41E801ED3007B1EE0 /* About */,
 				BB2E5D451E796E2600768B60 /* Main.storyboard */,
+				BB0D43201E8164D500F9D117 /* ExhibitorHeaderView.xib */,
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
 				BB2E5D501E796E2700768B60 /* Info.plist */,
@@ -425,6 +437,12 @@
 				BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */,
 				BBF69BF41E811321004CA5C7 /* ExhibitorCollectionViewCell.h */,
 				BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */,
+				BBF69BF91E81335E004CA5C7 /* MainSponsorTableViewCell.h */,
+				BBF69BFA1E81335E004CA5C7 /* MainSponsorTableViewCell.m */,
+				BBF69BFC1E8134DA004CA5C7 /* ExhibitorTableViewCell.h */,
+				BBF69BFD1E8134DA004CA5C7 /* ExhibitorTableViewCell.m */,
+				BB0D431D1E8164B200F9D117 /* ExihibitorHeaderView.h */,
+				BB0D431E1E8164B200F9D117 /* ExihibitorHeaderView.m */,
 			);
 			name = Exhibitor;
 			sourceTree = "<group>";
@@ -494,6 +512,7 @@
 				BB2E5D781E79744A00768B60 /* Meridian.bundle in Resources */,
 				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
 				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
+				BB0D43211E8164D500F9D117 /* ExhibitorHeaderView.xib in Resources */,
 				BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */,
 				BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */,
 				BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */,
@@ -566,6 +585,8 @@
 				BB2E5DD01E7988CF00768B60 /* UIImage+MultiFormat.m in Sources */,
 				BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */,
 				BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */,
+				BBF69BFB1E81335E004CA5C7 /* MainSponsorTableViewCell.m in Sources */,
+				BB0D431F1E8164B200F9D117 /* ExihibitorHeaderView.m in Sources */,
 				BB2E5DCD1E7988CF00768B60 /* SDWebImagePrefetcher.m in Sources */,
 				BB3BCFF91E802357007B1EE0 /* AboutTableViewCell.m in Sources */,
 				BB2E5D441E796E2600768B60 /* ViewController.m in Sources */,
@@ -576,6 +597,7 @@
 				BB2E5DCB1E7988CF00768B60 /* SDWebImageDownloaderOperation.m in Sources */,
 				BB3BCFEC1E801064007B1EE0 /* MessageObject.m in Sources */,
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
+				BBF69BFE1E8134DA004CA5C7 /* ExhibitorTableViewCell.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB3BCFEF1E801294007B1EE0 /* InboxTableViewCell.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,

@@ -11,15 +11,18 @@
 #import "RHWebServiceManager.h"
 #import "UIImageView+AFNetworking.h"
 #import "ExhibitorCollectionViewCell.h"
+#import "ExhibitorTableViewCell.h"
+#import "MainSponsorTableViewCell.h"
+#import "ExihibitorHeaderView.h"
 
-@interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource>
-{
+@interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource,UITableViewDataSource,UITableViewDelegate>
+{  
     NSMutableArray * _datasource;
 }
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
-@property (weak, nonatomic) IBOutlet UICollectionView *exhibitorCollectionView;
-@property (weak, nonatomic) IBOutlet UIWebView *mainSponsorWebview;
+@property (weak, nonatomic) IBOutlet UITableView *exhibitorTableview;
+
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *exhibitorsDataArray;
 
@@ -33,12 +36,7 @@
     
     self.title = @"Exhibitors";
     
-   // self.speakerObject = [SpeakerWebServiceObject new];
-    
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection  = UICollectionViewScrollDirectionHorizontal;
-    [self.exhibitorCollectionView setCollectionViewLayout:flowLayout];
-    
+
     self.slideShow.datasource = self;
     self.slideShow.delegate = self;
     [self.slideShow setDelay:2]; // Delay between transitions
@@ -51,6 +49,16 @@
                      [UIImage imageNamed:@"slider2"],
                      [UIImage imageNamed:@"slider3"],
                      [UIImage imageNamed:@"slider4"]] mutableCopy];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.exhibitorTableview.estimatedRowHeight = 120;
+    self.exhibitorTableview.rowHeight = UITableViewAutomaticDimension;
+    
+    UINib *headerNib = [UINib nibWithNibName:@"ExhibitorHeaderView" bundle:nil];
+    [self.exhibitorTableview registerNib:headerNib forHeaderFooterViewReuseIdentifier:@"header"];
+    self.exhibitorTableview.estimatedSectionHeaderHeight = 30;
+    self.exhibitorTableview.sectionHeaderHeight = UITableViewAutomaticDimension;
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -59,7 +67,7 @@
     
     [self.slideShow start];
     [self CallExhibitorWebservice];
-    [self loadDetailsWebview];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +97,89 @@
     return _datasource.count;
 }
 
+#pragma mark Tableview data source methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(section == 0)
+        return 2;
+    else
+        return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 0)
+    {
+        
+        static NSString *identifier = @"mainSponsorCell";
+        MainSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+        if(indexPath.row == 0)
+            cell.mainSponsorImageView.image = [UIImage imageNamed:@"main1"];
+        else
+            cell.mainSponsorImageView.image = [UIImage imageNamed:@"main2"];
+        //cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else
+    {
+        static NSString *identifier = @"exhibitorSponsorCell";
+        ExhibitorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+        [cell.exhibitorCollectionview reloadData];
+        //cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    ExihibitorHeaderView *headerView = [self.exhibitorTableview dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+    
+    if(section == 0)
+        headerView.headerNameLabel.text = @"Main sponsors";
+    else
+        headerView.headerNameLabel.text = @"Exhibitors";
+    
+    return headerView;
+}
+
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 5.00;
+//}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.00;
+}
+
+
+
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    return footerView;
+}
+
+#pragma mark Web View Delegate Method
+
+
 #pragma mark - Collectionview datasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -103,7 +194,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"exhibitorCell";
+    static NSString *identifier = @"collectionCell";
     
     ExhibitorCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
@@ -157,7 +248,7 @@
         //self.speakerObject = [self.speakersDataArray objectAtIndex:0];
         //[self loadDetailsWebview:self.speakerObject.speakerDetails];
         
-        [self.exhibitorCollectionView reloadData];
+        [self.exhibitorTableview reloadData];
     }
 }
 
@@ -173,25 +264,6 @@
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
-}
-
--(void) loadDetailsWebview
-{
-//    self.speakerDetailWebview.opaque = NO;
-//    self.speakerDetailWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-//    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",details];
-//    [self.speakerDetailWebview loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-//    self.speakerDetailWebview.delegate = self;
-//    self.speakerDetailWebview.scrollView.scrollEnabled = YES;
-    
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"MainSponsor" ofType:@"html"];
-    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-    htmlString =  [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",htmlString];
-    htmlString = [NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString];
-    [self.mainSponsorWebview loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
-    self.mainSponsorWebview.scrollView.scrollEnabled = YES;
-    self.mainSponsorWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-    
 }
 
 #pragma mark Table View Delegate Method ends
