@@ -60,6 +60,9 @@
 		BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */; };
 		BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */; };
 		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
+		BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */; };
+		BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */; };
+		BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */ = {isa = PBXBuildFile; fileRef = BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */; };
 		D30C12B206385721D9CAA56A /* libPods-Shippax Conf .a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2889EDE860F20509279D3057 /* libPods-Shippax Conf .a */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +160,11 @@
 		BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = secondVideo.html; sourceTree = "<group>"; };
 		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
 		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
+		BBF69BF01E8110DA004CA5C7 /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
+		BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsViewController.m; sourceTree = "<group>"; };
+		BBF69BF41E811321004CA5C7 /* ExhibitorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorCollectionViewCell.h; sourceTree = "<group>"; };
+		BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorCollectionViewCell.m; sourceTree = "<group>"; };
+		BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MainSponsor.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,11 +273,13 @@
 				BB2E5D611E79733F00768B60 /* Inbox */,
 				BB10350A1E7AB382009B9AE6 /* More */,
 				BB10350E1E7AB3D6009B9AE6 /* Speakers */,
+				BBF69BF31E8110DF004CA5C7 /* Exhibitor */,
 				BB3BCFF41E801ED3007B1EE0 /* About */,
 				BB2E5D451E796E2600768B60 /* Main.storyboard */,
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
 				BB2E5D501E796E2700768B60 /* Info.plist */,
+				BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */,
 				BB3BCFF51E802002007B1EE0 /* About.html */,
 				BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */,
 				BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */,
@@ -408,6 +418,17 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		BBF69BF31E8110DF004CA5C7 /* Exhibitor */ = {
+			isa = PBXGroup;
+			children = (
+				BBF69BF01E8110DA004CA5C7 /* ExhibitorsViewController.h */,
+				BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */,
+				BBF69BF41E811321004CA5C7 /* ExhibitorCollectionViewCell.h */,
+				BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */,
+			);
+			name = Exhibitor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -474,6 +495,7 @@
 				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
 				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
 				BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */,
+				BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */,
 				BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */,
 				BB2E5D4C1E796E2700768B60 /* Assets.xcassets in Resources */,
 				BB2E5D471E796E2600768B60 /* Main.storyboard in Resources */,
@@ -542,6 +564,7 @@
 				BB3BCFE11E800D68007B1EE0 /* StreamingConnection.m in Sources */,
 				BB2E5DCE1E7988CF00768B60 /* UIButton+WebCache.m in Sources */,
 				BB2E5DD01E7988CF00768B60 /* UIImage+MultiFormat.m in Sources */,
+				BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */,
 				BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */,
 				BB2E5DCD1E7988CF00768B60 /* SDWebImagePrefetcher.m in Sources */,
 				BB3BCFF91E802357007B1EE0 /* AboutTableViewCell.m in Sources */,
@@ -569,6 +592,7 @@
 				BB2E5D3E1E796E2600768B60 /* main.m in Sources */,
 				BB3BCFF31E801ECD007B1EE0 /* AboutViewController.m in Sources */,
 				BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */,
+				BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */,
 				BB2E5DC71E7988CF00768B60 /* SDImageCache.m in Sources */,
 				BB3BCFE51E800D97007B1EE0 /* Inbox Shared Object.m in Sources */,
 			);

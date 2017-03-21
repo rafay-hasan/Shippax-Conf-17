@@ -71,6 +71,13 @@
                      [self.delegate dataFromWebReceivedSuccessfully:[self parseAllHomeItems:responseObject]];
                  }
              }
+             else if(self.requestType == HTTPRequestTypeExhibitor)
+             {
+                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                 {
+                     [self.delegate dataFromWebReceivedSuccessfully:responseObject];
+                 }
+             }
          }
          
      }

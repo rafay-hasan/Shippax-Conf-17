@@ -9,6 +9,7 @@
 #import "MoreViewController.h"
 #import "SpeakersViewController.h"
 #import "AboutViewController.h"
+#import "ExhibitorsViewController.h"
 
 @interface MoreViewController ()
 
@@ -95,6 +96,11 @@
     if(indexPath.section == 0)
     {
         SpeakersViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Speakers"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if(indexPath.section == 1)
+    {
+        ExhibitorsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"exhibitor"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(indexPath.section == 3)

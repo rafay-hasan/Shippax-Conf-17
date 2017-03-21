@@ -1,46 +1,43 @@
 //
-//  SpeakersViewController.m
+//  ExhibitorsViewController.m
 //  Shippax Conf 
 //
-//  Created by Rafay Hasan on 3/16/17.
+//  Created by Rafay Hasan on 3/21/17.
 //  Copyright © 2017 Rafay Hasan. All rights reserved.
 //
 
-#import "SpeakersViewController.h"
+#import "ExhibitorsViewController.h"
 #import "KASlideShow.h"
 #import "RHWebServiceManager.h"
 #import "UIImageView+AFNetworking.h"
-#import "SpeakersCollectionViewCell.h"
-#import "SpeakerWebServiceObject.h"
+#import "ExhibitorCollectionViewCell.h"
 
-@interface SpeakersViewController ()<KASlideShowDelegate,KASlideShowDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate,UIWebViewDelegate>
+@interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource>
 {
     NSMutableArray * _datasource;
 }
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
-@property (weak, nonatomic) IBOutlet UICollectionView *speakerCollectionView;
-@property (weak, nonatomic) IBOutlet UIWebView *speakerDetailWebview;
-
+@property (weak, nonatomic) IBOutlet UICollectionView *exhibitorCollectionView;
+@property (weak, nonatomic) IBOutlet UIWebView *mainSponsorWebview;
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
-@property (strong,nonatomic) NSArray *speakersDataArray;
-@property (strong,nonatomic) SpeakerWebServiceObject *speakerObject;
+@property (strong,nonatomic) NSArray *exhibitorsDataArray;
 
 @end
 
-@implementation SpeakersViewController
+@implementation ExhibitorsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"Speakers";
+    self.title = @"Exhibitors";
     
-    self.speakerObject = [SpeakerWebServiceObject new];
+   // self.speakerObject = [SpeakerWebServiceObject new];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection  = UICollectionViewScrollDirectionHorizontal;
-    [self.speakerCollectionView setCollectionViewLayout:flowLayout];
+    [self.exhibitorCollectionView setCollectionViewLayout:flowLayout];
     
     self.slideShow.datasource = self;
     self.slideShow.delegate = self;
@@ -54,12 +51,6 @@
                      [UIImage imageNamed:@"slider2"],
                      [UIImage imageNamed:@"slider3"],
                      [UIImage imageNamed:@"slider4"]] mutableCopy];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -67,9 +58,14 @@
     [super viewDidAppear:YES];
     
     [self.slideShow start];
-    [self CallSpeakersWebservice];
+    [self CallExhibitorWebservice];
+    [self loadDetailsWebview];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 /*
 #pragma mark - Navigation
@@ -80,7 +76,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 #pragma mark - KASlideShow datasource
 
@@ -103,26 +98,30 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.speakersDataArray.count;
+    return self.exhibitorsDataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"SpeakerCell";
+    static NSString *identifier = @"exhibitorCell";
     
-    SpeakersCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    ExhibitorCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
-    cell.speakerName.attributedText = self.speakerObject.speakerName;
-    [cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr]];
-   
+    if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"] isKindOfClass:[NSString class]])
+        [cell.exhibitorImageView setImageWithURL:[NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"]]];
+    else
+        cell.exhibitorImageView.image = nil;
+    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
-    [self loadDetailsWebview:self.speakerObject.speakerDetails];
+   if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"] isKindOfClass:[NSString class]])
+   {
+       NSURL *requestedURL = [NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"link"]];
+       [[UIApplication sharedApplication] openURL:requestedURL];
+   }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -139,11 +138,11 @@
 }
 
 
--(void) CallSpeakersWebservice
+-(void) CallExhibitorWebservice
 {
     self.view.userInteractionEnabled = NO;
-    self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestTypeSpeakers Delegate:self];
-    [self.myWebservice getDataFromWebURL:[NSString stringWithFormat:@"%@Speakers",BASE_URL_API]];
+    self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestTypeExhibitor Delegate:self];
+    [self.myWebservice getDataFromWebURL:[NSString stringWithFormat:@"%@exhibitors",BASE_URL_API]];
 }
 
 
@@ -151,14 +150,14 @@
 {
     self.view.userInteractionEnabled = YES;
     
-    if(self.myWebservice.requestType == HTTPRequestTypeSpeakers)
+    if(self.myWebservice.requestType == HTTPRequestTypeExhibitor)
     {
         NSArray *tempArray = (NSArray *)responseObj;
-        self.speakersDataArray = [NSArray arrayWithArray:tempArray];
-        self.speakerObject = [self.speakersDataArray objectAtIndex:0];
-        [self loadDetailsWebview:self.speakerObject.speakerDetails];
-
-        [self.speakerCollectionView reloadData];
+        self.exhibitorsDataArray = [NSArray arrayWithArray:tempArray];
+        //self.speakerObject = [self.speakersDataArray objectAtIndex:0];
+        //[self loadDetailsWebview:self.speakerObject.speakerDetails];
+        
+        [self.exhibitorCollectionView reloadData];
     }
 }
 
@@ -176,21 +175,30 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void) loadDetailsWebview:(NSString *)details
+-(void) loadDetailsWebview
 {
-    self.speakerDetailWebview.opaque = NO;
-    self.speakerDetailWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",details];
-    [self.speakerDetailWebview loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-    self.speakerDetailWebview.delegate = self;
-    self.speakerDetailWebview.scrollView.scrollEnabled = YES;
+//    self.speakerDetailWebview.opaque = NO;
+//    self.speakerDetailWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+//    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",details];
+//    [self.speakerDetailWebview loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+//    self.speakerDetailWebview.delegate = self;
+//    self.speakerDetailWebview.scrollView.scrollEnabled = YES;
+    
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"MainSponsor" ofType:@"html"];
+    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    htmlString =  [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",htmlString];
+    htmlString = [NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString];
+    [self.mainSponsorWebview loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+    self.mainSponsorWebview.scrollView.scrollEnabled = YES;
+    self.mainSponsorWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+    
 }
 
 #pragma mark Table View Delegate Method ends
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-   // [self.activityIndicator startAnimating];
+    // [self.activityIndicator startAnimating];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -203,6 +211,7 @@
     }
     return YES;
 }
+
 
 
 @end
