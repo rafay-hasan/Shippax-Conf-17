@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Wednesday, April 5</key>
+	<dict>
+		<key>Check-in opens in the terminal at Civitavecchia</key>
+		<array>
+			<string>08.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Embarkation &amp; check-in to cabins</key>
+		<array>
+			<string>09.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Welcome coffee in the exhibition area, deck 7, sponsored by Stena RoRo, networking &amp; visit exhibitors</key>
+		<array>
+			<string>10.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Conference begins at the Theatre, deck 8</key>
+		<array>
+			<string>12.00</string>
+			<string>Opening,Presentation by main sponsor, Carus,Carus flash presentation</string>
+			<string>Bo-Lennart Thorbjörnsson, BOLT Consulting,Matteo Catani, GNV,Anders Rundberg, Carus</string>
+		</array>
+		<key>Where are we now as an industry?</key>
+		<array>
+			<string>12.15</string>
+			<string></string>
+			<string>Bo-Lennart Thorbjörnsson, BOLT Consulting</string>
+		</array>
+		<key>Panel debate with ferry top executives</key>
+		<array>
+			<string>12.30</string>
+			<string>Newbuildings and market focus,Q&amp;A</string>
+			<string>Peder Gellert, DFDS, Matteo Catani, GNV, Christophe Mathieu, Brittany Ferries, Björn Blomqvist, Rederi AB Eckerö, Paul Kypriano, Grimaldi Group</string>
+		</array>
+		<key>Lunch in Self Service Restaurant, deck 7, sponsored by ABB Marine &amp; Ports, networking &amp; visit exhibitors</key>
+		<array>
+			<string>13.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Alternative fuels and energy systems</key>
+		<array>
+			<string>14.45</string>
+			<string>HH Ferries battery systems, Fjord Line&apos;s LNG experiences, Q&amp;A</string>
+			<string>Marcus Högblom, ABB Marine &amp; Ports, Morten Larsen, Fjord Line and Oscar Kallerdahl, Rolls-Royce</string>
+		</array>
+		<key>Economic and industry/market trends</key>
+		<array>
+			<string>15.35</string>
+			<string>Ship Finance &amp; Trump/Brexit Economy outlook, Med short sea routes, Situation and future, Q&amp;A</string>
+			<string>Denise Baum, KfW Bank, Alan Klanac, Jadrolinija</string>
+		</array>
+		<key>Coffee in the exhibition area, deck 7, sponsored by Stena RoRo, networking &amp; visit exhibitors</key>
+		<array>
+			<string>16.05</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Possible solutions for the industry</key>
+		<array>
+			<string>16.45</string>
+			<string>HVSC or LVSC plant in moveable container in any port, The E-Factor, Green shipping with focus on LNG, Electric Ferry automatic charging, From Ferry Shipping to Blue Ocean</string>
+			<string>Ingemar Gustavsson, ACTEMIUM, Ole Kristian Sivertsen, Global Eagle, Mahinde Abeynaike, Bomin Linde, Harald Tillung, Wärtsilä Marine Solutions, Koert Grever, IESE</string>
+		</array>
+		<key>Fast Ferries; past, present and future</key>
+		<array>
+			<string>17.45</string>
+			<string>Q&amp;A</string>
+			<string>Mike Wake, Austal </string>
+		</array>
+		<key>The ro-ro and freight development</key>
+		<array>
+			<string>18.00</string>
+			<string>Freight and ro-ro in the Med, Logistic and the ferry industry, Q&amp;A</string>
+			<string>Costantino Baldissara, Grimaldi Group, Roman Poersch, Wilhelm Borchert</string>
+		</array>
+		<key>Shippax Awards 2017</key>
+		<array>
+			<string>18.30</string>
+			<string></string>
+			<string>Philippe Holthof &amp; Elizabeth Mandersson, Shippax</string>
+		</array>
+		<key>Happy Hour in the exhibition area, deck 7, sponsored by ABB Marine &amp; Ports, networking &amp; visit exhibitors</key>
+		<array>
+			<string>19.15</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Welcome drink at the Veranda Bar, deck 9, sponsored by Brax Shipping, networking</key>
+		<array>
+			<string>20.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Departure Civitavecchia</key>
+		<array>
+			<string>20.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Dinner in the à la Carte Restaurant, deck 7, sponsored by DNV GL</key>
+		<array>
+			<string>21.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Night cap, sponsored by Port of Ystad, networking</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<key>Thursday, April 6</key>
+	<dict>
+		<key>Breakfast in the Self Service Restaurant, deck 7, sponsored by Versonix</key>
+		<array>
+			<string>07.00-09.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Arrival Palermo</key>
+		<array>
+			<string>07.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>BOLT Ferry Think Tank. How will we look 2025?</key>
+		<array>
+			<string>10.00</string>
+			<string>Q&amp;A</string>
+			<string>John Steen Mikkelsen, Danske Færgen, Fredrik Johansson, Tillberg Design, Per Westling, Stena RoRo, Carsten Ortloff, Flensburger Schiffbau</string>
+		</array>
+		<key>Getting the extra passengers to go by ferry?</key>
+		<array>
+			<string>11.00</string>
+			<string>Internet of things for the industry, Catching the motorist market, Q&amp;A</string>
+			<string>Jan-Erik Norli, Telenor Maritime, Bill Gibbons, Discover Ferries</string>
+		</array>
+		<key>Coffee in the exhibition area, deck 7, sponsored by Stena RoRo, networking &amp; visit exhibitors</key>
+		<array>
+			<string>11.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Possible solutions for the industry</key>
+		<array>
+			<string>12.00</string>
+			<string>Turn Big Data Into Smart, Automatic Crossing Systems for Ferries, Challenges when building in China, SpeedCast - Creating value for customers, TBN</string>
+			<string>Magnus Hansson, Callenberg Technology, John Roger Nesje, Rolls-Royce, Finn Wollesen, KNUD E HANSEN, Giuseppe Cardinale, Speedcast, TBN</string>
+		</array>
+		<key>Lunch in Self Service Restaurant, deck 7, sponsored by Midas, networking &amp; visit exhibitors </key>
+		<array>
+			<string>13.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Optional visit in Palermo</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Brexit and the ferry industry</key>
+		<array>
+			<string>15.45</string>
+			<string>Possible scenarios Brexit, Brexit from an operators point of view, Q&amp;A</string>
+			<string>Guy Platten, UK Chamber of Shipping, Corinne Vintner, Brittany Ferries</string>
+		</array>
+		<key>Coffee in the exhibition area, deck 7, sponsored by Stena RoRo, networking &amp; visit exhibitors  </key>
+		<array>
+			<string>16.15</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>New ships concept and projects</key>
+		<array>
+			<string>17.00</string>
+			<string>TEXELSTROOM/ TESO, BERLIN/ Scandlines, MEGASTAR, Tallink, Q&amp;A</string>
+			<string>Cees de Waal, TESO, Morten Haure-Pedersen, Scandlines, Janek Stalmeister &amp; Tarvi-Carlos Tuulik, Tallink Grupp</string>
+		</array>
+		<key>Interferry</key>
+		<array>
+			<string>18.00</string>
+			<string>Stronger Together, ferry operators &amp; members, Q&amp;A</string>
+			<string>Mike Corrigan, INTERFERRY</string>
+		</array>
+		<key>How to attract those over 50?</key>
+		<array>
+			<string>18.15</string>
+			<string>They have the money to spend</string>
+			<string>Bruce Peter, Glasgow School of Art</string>
+		</array>
+		<key>Words of farewell</key>
+		<array>
+			<string>18.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Happy Hour in the exhibition area, deck 7, sponsored by Wärtsilä, networking &amp; visit exhibitors</key>
+		<array>
+			<string>19.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Dinner drink, sponsored by RINA, at the Veranda Bar, deck 9, networking</key>
+		<array>
+			<string>20.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Departure Palermo</key>
+		<array>
+			<string>20.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Farewell dinner in the à la Carte Restaurant, deck 7, sponsored by GNV</key>
+		<array>
+			<string>21.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Night cap, sponsored by Onorato Armatori, networking</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<key>Friday, April 7</key>
+	<dict>
+		<key>Breakfast in the Self Service Restaurant, deck 7, sponsored by Versonix</key>
+		<array>
+			<string>06.30-08.00</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Arrival in Civitavecchia</key>
+		<array>
+			<string>06.30</string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Disembarkation</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>Buses to the airport</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+		<key>LA SUPERBA departure</key>
+		<array>
+			<string>10.00</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+</dict>
+</plist>

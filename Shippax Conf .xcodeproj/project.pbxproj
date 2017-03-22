@@ -62,6 +62,9 @@
 		BB3BCFF91E802357007B1EE0 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */; };
 		BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */; };
 		BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */; };
+		BBA72BAF1E827AD800BED342 /* Programme.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBA72BAE1E827AD800BED342 /* Programme.plist */; };
+		BBA72BB31E8297F700BED342 /* ProgrammeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA72BB21E8297F700BED342 /* ProgrammeViewController.m */; };
+		BBA72BB61E829B4900BED342 /* ProgrammeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA72BB51E829B4900BED342 /* ProgrammeTableViewCell.m */; };
 		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
 		BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */; };
 		BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */; };
@@ -166,6 +169,11 @@
 		BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
 		BB3BCFFA1E8023C3007B1EE0 /* firstVideo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = firstVideo.html; sourceTree = "<group>"; };
 		BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = secondVideo.html; sourceTree = "<group>"; };
+		BBA72BAE1E827AD800BED342 /* Programme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Programme.plist; sourceTree = "<group>"; };
+		BBA72BB11E8297F700BED342 /* ProgrammeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeViewController.h; sourceTree = "<group>"; };
+		BBA72BB21E8297F700BED342 /* ProgrammeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeViewController.m; sourceTree = "<group>"; };
+		BBA72BB41E829B4900BED342 /* ProgrammeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeTableViewCell.h; sourceTree = "<group>"; };
+		BBA72BB51E829B4900BED342 /* ProgrammeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeTableViewCell.m; sourceTree = "<group>"; };
 		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
 		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
 		BBF69BF01E8110DA004CA5C7 /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
@@ -279,6 +287,7 @@
 				BB2E5D561E7972EE00768B60 /* Home */,
 				BB2E5D5D1E79732000768B60 /* Aruba */,
 				BB2E5D611E79733F00768B60 /* Inbox */,
+				BBA72BB01E8297D100BED342 /* Programme */,
 				BB10350A1E7AB382009B9AE6 /* More */,
 				BB10350E1E7AB3D6009B9AE6 /* Speakers */,
 				BBF69BF31E8110DF004CA5C7 /* Exhibitor */,
@@ -287,6 +296,7 @@
 				BB2E5D4B1E796E2700768B60 /* Assets.xcassets */,
 				BB2E5D4D1E796E2700768B60 /* LaunchScreen.storyboard */,
 				BB2E5D501E796E2700768B60 /* Info.plist */,
+				BBA72BAE1E827AD800BED342 /* Programme.plist */,
 				BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */,
 				BB0D43281E81794D00F9D117 /* DNVGL.html */,
 				BB3BCFF51E802002007B1EE0 /* About.html */,
@@ -427,6 +437,17 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		BBA72BB01E8297D100BED342 /* Programme */ = {
+			isa = PBXGroup;
+			children = (
+				BBA72BB11E8297F700BED342 /* ProgrammeViewController.h */,
+				BBA72BB21E8297F700BED342 /* ProgrammeViewController.m */,
+				BBA72BB41E829B4900BED342 /* ProgrammeTableViewCell.h */,
+				BBA72BB51E829B4900BED342 /* ProgrammeTableViewCell.m */,
+			);
+			name = Programme;
+			sourceTree = "<group>";
+		};
 		BBF69BF31E8110DF004CA5C7 /* Exhibitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +530,7 @@
 				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
 				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
 				BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */,
+				BBA72BAF1E827AD800BED342 /* Programme.plist in Resources */,
 				BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */,
 				BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */,
 				BB2E5D4C1E796E2700768B60 /* Assets.xcassets in Resources */,
@@ -588,12 +610,14 @@
 				BB2E5D601E79733B00768B60 /* AnnouncementsViewController.m in Sources */,
 				BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */,
 				BB2E5D4A1E796E2700768B60 /* Shippax_Conf__17.xcdatamodeld in Sources */,
+				BBA72BB31E8297F700BED342 /* ProgrammeViewController.m in Sources */,
 				BB2E5DCB1E7988CF00768B60 /* SDWebImageDownloaderOperation.m in Sources */,
 				BB3BCFEC1E801064007B1EE0 /* MessageObject.m in Sources */,
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB3BCFEF1E801294007B1EE0 /* InboxTableViewCell.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
+				BBA72BB61E829B4900BED342 /* ProgrammeTableViewCell.m in Sources */,
 				BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */,
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
 				BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */,
@@ -676,7 +700,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -718,7 +742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -737,7 +761,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MeridianAppId = 5505761522745344;
 				MeridianDeviceToken = 1523fea1adc7782f06f8a0f192624429a352720b;
@@ -761,7 +785,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MeridianAppId = 5505761522745344;
 				MeridianDeviceToken = 1523fea1adc7782f06f8a0f192624429a352720b;

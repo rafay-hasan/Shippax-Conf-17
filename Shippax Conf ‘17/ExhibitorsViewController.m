@@ -179,9 +179,9 @@
     {
         SponsorCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerCell" forIndexPath:indexPath];
        if(indexPath.section == 0)
-           headerView.headerTitleLabel.text = @"Main sponsors";
+           headerView.headerTitleLabel.text = @"Main sponsor:";
         else
-            headerView.headerTitleLabel.text = @"Exhibitors";
+            headerView.headerTitleLabel.text = @"Sponsors & exhibitors:";
         
         return headerView;
     }
