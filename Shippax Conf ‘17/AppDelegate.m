@@ -51,7 +51,7 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     
-    //[self establishWebSocketConnection];
+    [self establishWebSocketConnection];
     
     
     return YES;
@@ -154,9 +154,9 @@
                      [Inbox_Shared_Object sharedInstance].totalCountNumber = [NSNumber numberWithInteger:[self retrieveTotalUnreadMessage]];
                      
                      if([Inbox_Shared_Object sharedInstance].totalCountNumber >= [NSNumber numberWithInt:1])
-                         [self.tabBarController.tabBar.items objectAtIndex:1].badgeValue = [NSString stringWithFormat:@"%@",[Inbox_Shared_Object sharedInstance].totalCountNumber];
+                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = [NSString stringWithFormat:@"%@",[Inbox_Shared_Object sharedInstance].totalCountNumber];
                      else
-                         [self.tabBarController.tabBar.items objectAtIndex:1].badgeValue = nil;
+                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = nil;
                      
                      
                      [[NSNotificationCenter defaultCenter] postNotificationName:@"InboxNotification" object:nil];

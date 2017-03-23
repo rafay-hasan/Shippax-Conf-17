@@ -10,18 +10,19 @@
 #import "KASlideShow.h"
 #import "RHWebServiceManager.h"
 #import "HomeTableViewCell.h"
+#import "SliderTableViewCell.h"
 #import "HomeWebServiceObject.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface HomeViewController ()<KASlideShowDelegate,KASlideShowDataSource,RHWebServiceDelegate,UIWebViewDelegate>
+@interface HomeViewController ()<KASlideShowDelegate,KASlideShowDataSource,RHWebServiceDelegate,UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>
 {
     NSMutableArray * _datasource;
     double firstTitleCurrentContentHeight,firstTitlePreviousContentHeight,firstDetailsCurrentContentHeight,firstDetailsePreviousContentHeight;
     double secondTitleCurrentContentHeight,secondTitlePreviousContentHeight,secondDetailsCurrentContentHeight,secondDetailsePreviousContentHeight;
     double thirdTitleCurrentContentHeight,thirdTitlePreviousContentHeight,thirdDetailsCurrentContentHeight,thirdDetailsePreviousContentHeight;
+    bool slideShowing;
 
 }
-@property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
@@ -32,10 +33,16 @@
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
+    
+    [tabBarController setDelegate:self];
+    
+    slideShowing = NO;
     
     firstTitleCurrentContentHeight = secondTitleCurrentContentHeight = thirdTitleCurrentContentHeight = 0;
     firstTitlePreviousContentHeight = secondTitlePreviousContentHeight = thirdTitlePreviousContentHeight = -10;
@@ -49,15 +56,6 @@
 
     
     self.homeObject = [HomeWebServiceObject new];
-    
-    // KASlideshow
-    self.slideShow.datasource = self;
-    self.slideShow.delegate = self;
-    [self.slideShow setDelay:.5]; // Delay between transitions
-    [self.slideShow setTransitionDuration:1]; // Transition duration
-    [self.slideShow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
-    [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
-    [self.slideShow addGesture:KASlideShowGestureSwipe]; // Gesture to go previous/next directly on the image
     
     _datasource = [@[[UIImage imageNamed:@"slider1"],
                      [UIImage imageNamed:@"slider2"],
@@ -74,7 +72,7 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self.slideShow start];
+    //[self.slideShow start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,7 +146,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.homeDataArray.count;
+    return self.homeDataArray.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -156,59 +154,109 @@
     return 1;
 }
 
+//- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath
+//{
+//    if(indexPath.section == 0)
+//    {
+//        static NSString *identifier = @"sliderCell";
+//        SliderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+//        
+//        if(slideShowing == NO)
+//        {
+//            //[cell.sliderView start];
+//            slideShowing = YES;
+//        }
+//        
+//    }
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"homeCell";
-    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    
-    self.homeObject = [self.homeDataArray objectAtIndex:indexPath.section];
-    
-    cell.titleWebView.opaque = NO;
-    cell.titleWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#FFFFFF;'>%@",self.homeObject.homeTitle];
-    [cell.titleWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-    cell.titleWebView.delegate = self;
-    cell.titleWebView.scrollView.scrollEnabled = NO;
-    cell.titleWebView.tag = 1000 + indexPath.section;
-    
-    cell.detailsWebView.opaque = NO;
-    cell.detailsWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-    detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.homeObject.homeDescription];
-    [cell.detailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-    cell.detailsWebView.delegate = self;
-    cell.detailsWebView.scrollView.scrollEnabled = NO;
-    cell.detailsWebView.tag = 2000 + indexPath.section;
-
     
     if(indexPath.section == 0)
     {
-        [cell.contentImageView setImageWithURL:[NSURL URLWithString:self.homeObject.homeImageUrlStr]];
-        cell.contentImageHeight.constant = 100;
+        static NSString *identifier = @"sliderCell";
+        SliderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
-        cell.titleContentHeight.constant = firstTitleCurrentContentHeight;
-        cell.detailsContentHeight.constant = firstDetailsCurrentContentHeight;
+        [cell.sliderView setDelay:1]; // Delay between transitions
+        [cell.sliderView setTransitionDuration:1.5]; // Transition duration
+        [cell.sliderView setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
+        [cell.sliderView setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
+        [cell.sliderView addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
+        [cell.sliderView start];
+        
+        if(slideShowing == NO)
+        {
+            //[cell.sliderView start];
+            slideShowing = YES;
+        }
+        
+        
+//        if(cell.sliderView.state != KASlideShowStateStarted)
+//            [cell.sliderView start];
+//        
+//        if(cell.sliderView.state == KASlideShowStateStopped)
+//            [cell.sliderView start];
+
+        
+        return cell;
     }
-    else if (indexPath.section == 1)
+    else
     {
-        [cell.contentImageView setImageWithURL:[NSURL URLWithString:self.homeObject.homeImageUrlStr]];
-         cell.contentImageHeight.constant = 150;
+        static NSString *identifier = @"homeCell";
+        HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
-        cell.titleContentHeight.constant = secondTitleCurrentContentHeight;
-        cell.detailsContentHeight.constant = secondDetailsCurrentContentHeight;
-    }
-    else if (indexPath.section == 2)
-    {
-        cell.contentImageView.image = nil;
-        cell.contentImageHeight.constant = 0;
+        self.homeObject = [self.homeDataArray objectAtIndex:indexPath.section - 1];
         
-        cell.titleContentHeight.constant = thirdTitleCurrentContentHeight;
-        cell.detailsContentHeight.constant = thirdDetailsCurrentContentHeight;
+        cell.titleWebView.opaque = NO;
+        cell.titleWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+        NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#FFFFFF;'>%@",self.homeObject.homeTitle];
+        [cell.titleWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+        cell.titleWebView.delegate = self;
+        cell.titleWebView.scrollView.scrollEnabled = NO;
+        cell.titleWebView.tag = 1000 + (indexPath.section -1);
+        
+        cell.detailsWebView.opaque = NO;
+        cell.detailsWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+        detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.homeObject.homeDescription];
+        [cell.detailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+        cell.detailsWebView.delegate = self;
+        cell.detailsWebView.scrollView.scrollEnabled = NO;
+        cell.detailsWebView.tag = 2000 + (indexPath.section - 1);
+        
+        
+        if(indexPath.section == 1)
+        {
+            [cell.contentImageView setImageWithURL:[NSURL URLWithString:self.homeObject.homeImageUrlStr]];
+            cell.contentImageHeight.constant = 100;
+            
+            cell.titleContentHeight.constant = firstTitleCurrentContentHeight;
+            cell.detailsContentHeight.constant = firstDetailsCurrentContentHeight;
+        }
+        else if (indexPath.section == 2)
+        {
+            [cell.contentImageView setImageWithURL:[NSURL URLWithString:self.homeObject.homeImageUrlStr]];
+            cell.contentImageHeight.constant = 150;
+            
+            cell.titleContentHeight.constant = secondTitleCurrentContentHeight;
+            cell.detailsContentHeight.constant = secondDetailsCurrentContentHeight;
+        }
+        else if (indexPath.section == 3)
+        {
+            cell.contentImageView.image = nil;
+            cell.contentImageHeight.constant = 0;
+            
+            cell.titleContentHeight.constant = thirdTitleCurrentContentHeight;
+            cell.detailsContentHeight.constant = thirdDetailsCurrentContentHeight;
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+
     }
     
-    cell.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -333,6 +381,16 @@
     webView.opaque = NO;
     webView.backgroundColor = [UIColor clearColor];
     
+}
+
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if(tabBarController.selectedIndex == 0)
+    {
+        slideShowing = NO;
+        [self.homeTableView reloadData];
+    }
 }
 
 

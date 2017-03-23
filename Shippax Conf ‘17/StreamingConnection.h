@@ -9,9 +9,9 @@
 #import "SignalR.h"
 
 #ifdef DEBUG
-static NSString * const SRConnectionBaseURL = @"http://stage-smy-wp.mcp.com:82";
+static NSString * const SRConnectionBaseURL = @"http://shippax-wp.mcp.com:82";
 #else
-static NSString * const SRConnectionBaseURL = @"http://stage-smy-wp.mcp.com:82";
+static NSString * const SRConnectionBaseURL = @"http://shippax-wp.mcp.com:82";
 #endif
 
 @interface StreamingConnection : SRHubConnection

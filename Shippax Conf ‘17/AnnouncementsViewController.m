@@ -10,6 +10,7 @@
 #import "InboxTableViewCell.h"
 #import "MessageObject.h"
 #import "AppDelegate.h"
+#import "InboxDetailsViewController.h"
 
 @interface AnnouncementsViewController ()
 {
@@ -50,6 +51,8 @@
     
     self.inboxTabkeView.estimatedRowHeight = 65;
     self.inboxTabkeView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
 }
 
@@ -63,15 +66,19 @@
     [self loadAllMessageContent];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NSIndexPath *index = self.inboxTabkeView.indexPathForSelectedRow;
+    InboxDetailsViewController *vc = segue.destinationViewController;
+    vc.messageObject = [self.allMessageArray objectAtIndex:index.section];
 }
-*/
+
 
 - (void) newMessageReceived
 {
@@ -82,6 +89,7 @@
 - (void) loadAllMessageContent
 {
     self.allMessageArray = [[NSArray alloc]initWithArray:[appDelegate retrieveAllInboxMessages]];
+    NSLog(@"MessageArray is %@",self.allMessageArray);
     
     if(self.allMessageArray.count > 0)
     {
@@ -105,14 +113,14 @@
     if (self.allMessageArray.count > 0)
     {
         self.inboxTabkeView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections = 1;
+        numOfSections = [self.allMessageArray count];
         self.inboxTabkeView.backgroundView   = nil;
     }
     else
     {
         UILabel *noDataLabel    = [[UILabel alloc] initWithFrame:CGRectMake(self.inboxTabkeView.frame.origin.x, self.inboxTabkeView.frame.origin.y, self.inboxTabkeView.bounds.size.width, self.inboxTabkeView.bounds.size.height)];
         noDataLabel.text  = @"No announcement available";
-        noDataLabel.textColor        = [UIColor grayColor];
+        noDataLabel.textColor        = [UIColor whiteColor];
         noDataLabel.textAlignment    = NSTextAlignmentCenter;
         self.inboxTabkeView.backgroundView = noDataLabel;
         self.inboxTabkeView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -122,7 +130,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.allMessageArray count];
+    return 1;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -140,7 +148,7 @@
 {
     InboxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inboxCell" forIndexPath:indexPath];
     
-    MessageObject *object = [self.allMessageArray objectAtIndex:indexPath.row];
+    MessageObject *object = [self.allMessageArray objectAtIndex:indexPath.section];
     cell.messageTitle.text = object.messageTitle;
     
     double unixTimeStamp = [object.time doubleValue];
@@ -161,7 +169,7 @@
         cell.messageStatus.hidden = NO;
     }
     
-    cell.backgroundColor = [UIColor whiteColor];
+    //cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;
 }
@@ -171,6 +179,35 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 3.00;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 3.00;
+}
+
+
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    return footerView;
+}
+
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
