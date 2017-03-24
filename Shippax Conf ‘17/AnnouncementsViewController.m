@@ -227,7 +227,7 @@
     {
         // row should be deleted
         
-        MessageObject *object = [self.allMessageArray objectAtIndex:indexPath.row];
+        MessageObject *object = [self.allMessageArray objectAtIndex:indexPath.section];
         
         if([appDelegate deleteMessageforMessageId:object.messageId])
         {

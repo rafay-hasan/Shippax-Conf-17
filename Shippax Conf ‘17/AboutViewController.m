@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "AboutTableViewCell.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AboutViewController ()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 {
@@ -35,6 +36,12 @@
     
     self.aboutTableView.estimatedRowHeight = 50;
     self.aboutTableView.rowHeight = UITableViewAutomaticDimension;
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    BOOL flag;
+    NSError *setCategoryError = nil;
+    flag = [audioSession setCategory:AVAudioSessionCategoryPlayback
+                               error:&setCategoryError];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +98,8 @@
         NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
         [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
         cell.aboutWebView.opaque = NO;
+        cell.aboutWebView.mediaPlaybackRequiresUserAction = NO;
+        cell.aboutWebView.allowsInlineMediaPlayback = YES;
         cell.aboutWebView.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
         htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
         [cell.aboutWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString] baseURL:nil];

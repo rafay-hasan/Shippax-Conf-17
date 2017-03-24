@@ -782,6 +782,7 @@
 			baseConfigurationReference = 646275BB1B17C5687409AC98 /* Pods-Shippax Conf .debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -790,9 +791,9 @@
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MeridianAppId = 5505761522745344;
-				MeridianDeviceToken = 1523fea1adc7782f06f8a0f192624429a352720b;
-				MeridianMapId = 5639445604728832;
+				MeridianAppId = 6204238904950784;
+				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
+				MeridianMapId = 5714163003293696;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
@@ -814,9 +815,9 @@
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MeridianAppId = 5505761522745344;
-				MeridianDeviceToken = 1523fea1adc7782f06f8a0f192624429a352720b;
-				MeridianMapId = 5639445604728832;
+				MeridianAppId = 6204238904950784;
+				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
+				MeridianMapId = 5714163003293696;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";

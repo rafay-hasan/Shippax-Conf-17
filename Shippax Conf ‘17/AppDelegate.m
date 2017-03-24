@@ -24,6 +24,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    if([[[NSUserDefaults standardUserDefaults]valueForKey:@"LastTime"] isKindOfClass:[NSString class]])
+    {
+        ;
+    }
+    else
+    {
+        NSDateFormatter *bulletinDateFormatter = [[NSDateFormatter alloc] init];
+        NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+        [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *date = [NSDate date];
+        
+        [bulletinDateFormatter setTimeZone:timeZone];
+        [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [[NSUserDefaults standardUserDefaults]setObject:[bulletinDateFormatter stringFromDate:date] forKey:@"LastTime"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
+
+    
     MRConfig *config = [MRConfig new];
     config.applicationToken = [[NSBundle mainBundle]objectForInfoDictionaryKey:@"DeviceToken"];
     [Meridian configure:config];
@@ -55,6 +75,15 @@
     
     
     return YES;
+}
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateInactive)
+    {
+        self.tabBarController.selectedIndex = 2;
+    }
 }
 
 

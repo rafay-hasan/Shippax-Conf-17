@@ -22,6 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"Main sponsor";
+    
     if([self.fileName isEqualToString:@"MainSponsor"])
         self.sponsorImageView.image = [UIImage imageNamed:@"main1"];
     else
