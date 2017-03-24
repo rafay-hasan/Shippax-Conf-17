@@ -150,7 +150,13 @@
     {
         SpeakerWebServiceObject *object = [SpeakerWebServiceObject new];
         
-        object.speakerName = [[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"title"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        object.speakerName = [[tempArray objectAtIndex:i] valueForKey:@"title"];
+        NSLog(@"Name is %@",object.speakerName);
+        object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+        object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+        object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"<strong>" withString:@""];
+        object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"</strong>" withString:@""];
+        //[[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"title"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
         object.speakerDetails = [[tempArray objectAtIndex:i]valueForKey:@"description"];
         object.speakerImageUrlStr = [[tempArray objectAtIndex:i]valueForKey:@"imageUrl"];
         

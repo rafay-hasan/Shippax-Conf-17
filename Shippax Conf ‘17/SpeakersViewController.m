@@ -46,9 +46,9 @@
     self.slideShow.delegate = self;
     [self.slideShow setDelay:2]; // Delay between transitions
     [self.slideShow setTransitionDuration:1]; // Transition duration
-    [self.slideShow setTransitionType:KASlideShowTransitionSlideHorizontal]; // Choose a transition type (fade or slide)
+    [self.slideShow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
     [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
-    [self.slideShow addGesture:KASlideShowGestureSwipe]; // Gesture to go previous/next directly on the image
+    [self.slideShow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
     
     _datasource = [@[[UIImage imageNamed:@"slider1"],
                      [UIImage imageNamed:@"slider2"],
@@ -113,8 +113,17 @@
     SpeakersCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
-    cell.speakerName.attributedText = self.speakerObject.speakerName;
-    [cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr]];
+    cell.speakerName.text = self.speakerObject.speakerName;
+    //[cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr]];
+    
+    cell.speakerNameWebView.opaque = NO;
+    cell.speakerNameWebView.backgroundColor =  [UIColor colorWithRed:0.19 green:0.24 blue:0.35 alpha:0.8];
+    //htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
+    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.speakerObject.speakerName];
+    [cell.speakerNameWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+    cell.speakerNameWebView.scrollView.scrollEnabled = NO;
+
+    [cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr] placeholderImage:[UIImage imageNamed:@"SpeakerPlaceholder"]];
    
     return cell;
 }
@@ -127,7 +136,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(96.0, 96.0);
+    return CGSizeMake(143.0, 143.0);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
@@ -180,7 +189,8 @@
 {
     self.speakerDetailWebview.opaque = NO;
     self.speakerDetailWebview.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='color:#FFFFFF;'>%@",details];
+    //htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
+    NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",details];
     [self.speakerDetailWebview loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
     self.speakerDetailWebview.delegate = self;
     self.speakerDetailWebview.scrollView.scrollEnabled = YES;

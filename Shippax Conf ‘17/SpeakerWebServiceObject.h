@@ -10,7 +10,7 @@
 
 @interface SpeakerWebServiceObject : NSObject
 
-@property (strong,nonatomic) NSAttributedString *speakerName;
+@property (strong,nonatomic) NSString *speakerName;
 @property (strong,nonatomic) NSString *speakerDetails;
 @property (strong,nonatomic) NSString *speakerImageUrlStr;
 

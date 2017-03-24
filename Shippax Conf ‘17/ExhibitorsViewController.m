@@ -40,9 +40,9 @@
     self.slideShow.delegate = self;
     [self.slideShow setDelay:2]; // Delay between transitions
     [self.slideShow setTransitionDuration:1]; // Transition duration
-    [self.slideShow setTransitionType:KASlideShowTransitionSlideHorizontal]; // Choose a transition type (fade or slide)
+    [self.slideShow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
     [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
-    [self.slideShow addGesture:KASlideShowGestureSwipe]; // Gesture to go previous/next directly on the image
+    [self.slideShow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
     
     _datasource = [@[[UIImage imageNamed:@"slider1"],
                      [UIImage imageNamed:@"slider2"],
@@ -126,7 +126,7 @@
     else
     {
         if([[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"] isKindOfClass:[NSString class]])
-            [cell.exhibitorImageView setImageWithURL:[NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"]]];
+           [cell.exhibitorImageView setImageWithURL:[NSURL URLWithString:[[self.exhibitorsDataArray objectAtIndex:indexPath.row]valueForKey:@"imageUrl"]] placeholderImage:[UIImage imageNamed:@"placeholer"]];
         else
             cell.exhibitorImageView.image = nil;
 

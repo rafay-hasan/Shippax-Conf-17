@@ -48,7 +48,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -64,20 +64,15 @@
     if(indexPath.section == 0)
     {
         cell.textLabel.text = @"Speakers";
-        cell.imageView.image = [[UIImage imageNamed:@"SelectedSpeakerIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        cell.imageView.image = [[UIImage imageNamed:@"Speakers"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
     }
     else if (indexPath.section == 1)
     {
         cell.textLabel.text = @"Exhibitors";
-        cell.imageView.image = [[UIImage imageNamed:@"SelectedExibitorIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        cell.imageView.image = [[UIImage imageNamed:@"exibitorsIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     else if (indexPath.section == 2)
-    {
-        cell.textLabel.text = @"Coupons & Offers";
-        cell.imageView.image = [[UIImage imageNamed:@"selectedAboutIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
-    else if (indexPath.section == 3)
     {
         cell.textLabel.text = @"About";
         cell.imageView.image = [[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -103,7 +98,7 @@
         ExhibitorsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"exhibitor"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if(indexPath.section == 3)
+    else if(indexPath.section == 2)
     {
         AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
         [self.navigationController pushViewController:vc animated:YES];

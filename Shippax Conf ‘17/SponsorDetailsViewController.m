@@ -12,6 +12,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIWebView *sponsorWebview;
+@property (weak, nonatomic) IBOutlet UIImageView *sponsorImageView;
 
 @end
 
@@ -20,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if([self.fileName isEqualToString:@"MainSponsor"])
+        self.sponsorImageView.image = [UIImage imageNamed:@"main1"];
+    else
+        self.sponsorImageView.image = [UIImage imageNamed:@"main2"];
     
     NSString *htmlFile = [[NSBundle mainBundle] pathForResource:self.fileName ofType:@"html"];
     NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
