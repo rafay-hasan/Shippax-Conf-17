@@ -33,8 +33,6 @@
 		BB2E5D701E79740D00768B60 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2E5D6F1E79740D00768B60 /* MobileCoreServices.framework */; };
 		BB2E5D721E79742000768B60 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2E5D711E79742000768B60 /* libxml2.2.tbd */; };
 		BB2E5D741E79742900768B60 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2E5D731E79742900768B60 /* libc++.1.tbd */; };
-		BB2E5D761E79744500768B60 /* Meridian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2E5D751E79744500768B60 /* Meridian.framework */; };
-		BB2E5D781E79744A00768B60 /* Meridian.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB2E5D771E79744A00768B60 /* Meridian.bundle */; };
 		BB2E5D7B1E79852400768B60 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5D7A1E79852400768B60 /* KASlideShow.m */; };
 		BB2E5DC61E7988CF00768B60 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DAA1E7988CF00768B60 /* NSData+ImageContentType.m */; };
 		BB2E5DC71E7988CF00768B60 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DAC1E7988CF00768B60 /* SDImageCache.m */; };
@@ -64,6 +62,8 @@
 		BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */ = {isa = PBXBuildFile; fileRef = BB3BCFFC1E8023D0007B1EE0 /* secondVideo.html */; };
 		BB46D8C81E83E99300CAF826 /* InboxDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46D8C71E83E99300CAF826 /* InboxDetailsViewController.m */; };
 		BB46D8CB1E83FF1200CAF826 /* SliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46D8CA1E83FF1200CAF826 /* SliderTableViewCell.m */; };
+		BB66A1EE1E8550640028A2B9 /* Meridian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB66A1ED1E8550640028A2B9 /* Meridian.framework */; };
+		BB66A1F01E8550690028A2B9 /* Meridian.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB66A1EF1E8550690028A2B9 /* Meridian.bundle */; };
 		BB7B22451E83A47600740010 /* ProgrammeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7B22441E83A47600740010 /* ProgrammeHeaderView.xib */; };
 		BB7B22481E83A4E600740010 /* ProgrammeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7B22471E83A4E600740010 /* ProgrammeHeaderView.m */; };
 		BBA72BAF1E827AD800BED342 /* Programme.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBA72BAE1E827AD800BED342 /* Programme.plist */; };
@@ -119,8 +119,6 @@
 		BB2E5D6F1E79740D00768B60 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BB2E5D711E79742000768B60 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		BB2E5D731E79742900768B60 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		BB2E5D751E79744500768B60 /* Meridian.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Meridian.framework; sourceTree = "<group>"; };
-		BB2E5D771E79744A00768B60 /* Meridian.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Meridian.bundle; sourceTree = "<group>"; };
 		BB2E5D791E79852400768B60 /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
 		BB2E5D7A1E79852400768B60 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
 		BB2E5DA91E7988CF00768B60 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -177,6 +175,8 @@
 		BB46D8C71E83E99300CAF826 /* InboxDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxDetailsViewController.m; sourceTree = "<group>"; };
 		BB46D8C91E83FF1200CAF826 /* SliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderTableViewCell.h; sourceTree = "<group>"; };
 		BB46D8CA1E83FF1200CAF826 /* SliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderTableViewCell.m; sourceTree = "<group>"; };
+		BB66A1ED1E8550640028A2B9 /* Meridian.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Meridian.framework; sourceTree = "<group>"; };
+		BB66A1EF1E8550690028A2B9 /* Meridian.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Meridian.bundle; sourceTree = "<group>"; };
 		BB7B22441E83A47600740010 /* ProgrammeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammeHeaderView.xib; sourceTree = "<group>"; };
 		BB7B22461E83A4E600740010 /* ProgrammeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeHeaderView.h; sourceTree = "<group>"; };
 		BB7B22471E83A4E600740010 /* ProgrammeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeHeaderView.m; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 				BB2E5D701E79740D00768B60 /* MobileCoreServices.framework in Frameworks */,
 				BB2E5D6E1E79740100768B60 /* SystemConfiguration.framework in Frameworks */,
 				BB2E5D6C1E7973FC00768B60 /* CoreBluetooth.framework in Frameworks */,
-				BB2E5D761E79744500768B60 /* Meridian.framework in Frameworks */,
 				BB2E5D6A1E7973F000768B60 /* CoreMotion.framework in Frameworks */,
+				BB66A1EE1E8550640028A2B9 /* Meridian.framework in Frameworks */,
 				BB2E5D681E7973EA00768B60 /* CoreLocation.framework in Frameworks */,
 				BB2E5D661E7973E500768B60 /* UIKit.framework in Frameworks */,
 				BB2E5D641E7973D300768B60 /* Foundation.framework in Frameworks */,
@@ -374,8 +374,8 @@
 			children = (
 				BB2E5D731E79742900768B60 /* libc++.1.tbd */,
 				BB2E5D711E79742000768B60 /* libxml2.2.tbd */,
-				BB2E5D771E79744A00768B60 /* Meridian.bundle */,
-				BB2E5D751E79744500768B60 /* Meridian.framework */,
+				BB66A1EF1E8550690028A2B9 /* Meridian.bundle */,
+				BB66A1ED1E8550640028A2B9 /* Meridian.framework */,
 				BB2E5D6F1E79740D00768B60 /* MobileCoreServices.framework */,
 				BB2E5D6D1E79740100768B60 /* SystemConfiguration.framework */,
 				BB2E5D6B1E7973FC00768B60 /* CoreBluetooth.framework */,
@@ -549,10 +549,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0D43291E81794D00F9D117 /* DNVGL.html in Resources */,
-				BB2E5D781E79744A00768B60 /* Meridian.bundle in Resources */,
 				BB3BCFF61E802002007B1EE0 /* About.html in Resources */,
 				BB3BCFFD1E8023D0007B1EE0 /* secondVideo.html in Resources */,
 				BB2E5D4F1E796E2700768B60 /* LaunchScreen.storyboard in Resources */,
+				BB66A1F01E8550690028A2B9 /* Meridian.bundle in Resources */,
 				BBA72BAF1E827AD800BED342 /* Programme.plist in Resources */,
 				BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */,
 				BB3BCFFB1E8023C3007B1EE0 /* firstVideo.html in Resources */,
