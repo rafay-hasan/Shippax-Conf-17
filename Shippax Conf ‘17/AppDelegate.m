@@ -14,7 +14,9 @@
 #include <sys/sysctl.h>
 #import <Meridian/Meridian.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<MRCampaignManagerDelegate>
+
+@property (nonatomic, strong) MRCampaignManager *campaignManager;
 
 @end
 
@@ -47,6 +49,10 @@
     MRConfig *config = [MRConfig new];
     config.applicationToken = [[NSBundle mainBundle]objectForInfoDictionaryKey:@"DeviceToken"];
     [Meridian configure:config];
+    
+    self.campaignManager = [[MRCampaignManager alloc] initWithApp:[MREditorKey keyWithIdentifier:[[NSBundle mainBundle]objectForInfoDictionaryKey:@"AppId"]]];
+    self.campaignManager.delegate = self;
+    [self.campaignManager startMonitoring];
     
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
@@ -85,6 +91,47 @@
         self.tabBarController.selectedIndex = 2;
     }
 }
+
+
+#pragma mark - MRCampaignManagerDelegate
+
+- (BOOL)campaignManager:(MRCampaignManager *)manager shouldGenerateNotificationForCampaign:(NSDictionary *)campaignInfo {
+    
+    NSLog(@"About to trigger campaign with title '%@'", campaignInfo[@"title"]);
+    
+    // We could return NO or create our own UIAlert or NSNotification based on the contents of campaignInfo if we wished.
+    // Returning YES will cause the default behavior, typically a local notification.
+    
+    // Since we don't want to pollute our app delegate with logic to generate an alert if we're foregrounded, we'll handle
+    // that case here.
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        
+        [[[UIAlertView alloc] initWithTitle:campaignInfo[@"title"]
+                                    message:campaignInfo[@"message"]
+                                   delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+        
+        // we handled it so MRCampaignManager doesn't have to.
+        return NO;
+    }
+    else {
+        // allow MRCampaignManager to handle it the usual way (posting a local notification)
+        return YES;
+    }
+}
+
+- (void)campaignManager:(MRCampaignManager *)manager didFailWithError:(NSError *)error {
+    
+    NSLog(@"Campaign manager failed with error: %@", error);
+    
+    //    [[[UIAlertView alloc] initWithTitle:@"Campaign Error"
+    //                                message:error.localizedDescription
+    //                               delegate:self
+    //                      cancelButtonTitle:@"OK"
+    //                      otherButtonTitles:nil] show];
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
