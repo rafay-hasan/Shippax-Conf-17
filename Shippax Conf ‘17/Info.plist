@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>DeviceToken</key>
@@ -33,6 +33,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Your bluetooth will be used to scan nearby beacons.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location will be used for the maps and to scan for nearby beacons.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

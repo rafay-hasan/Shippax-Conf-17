@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB2E5D381E796E2600768B60"
-               BuildableName = "Shippax Conf .app"
+               BuildableName = "Shippax.app"
                BlueprintName = "Shippax Conf "
                ReferencedContainer = "container:Shippax Conf .xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB2E5D381E796E2600768B60"
-            BuildableName = "Shippax Conf .app"
+            BuildableName = "Shippax.app"
             BlueprintName = "Shippax Conf "
             ReferencedContainer = "container:Shippax Conf .xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB2E5D381E796E2600768B60"
-            BuildableName = "Shippax Conf .app"
+            BuildableName = "Shippax.app"
             BlueprintName = "Shippax Conf "
             ReferencedContainer = "container:Shippax Conf .xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB2E5D381E796E2600768B60"
-            BuildableName = "Shippax Conf .app"
+            BuildableName = "Shippax.app"
             BlueprintName = "Shippax Conf "
             ReferencedContainer = "container:Shippax Conf .xcodeproj">
          </BuildableReference>

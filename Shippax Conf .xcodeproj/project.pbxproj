@@ -796,7 +796,7 @@
 				MeridianMapId = 5714163003293696;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcp.Shippax;
 				PRODUCT_NAME = Shippax;
-				PROVISIONING_PROFILE = "cf215000-1eba-4c4c-9cb2-030a445dd23b";
+				PROVISIONING_PROFILE = "fd9f0983-a832-45e0-8920-7ea2657a21c0";
 				PROVISIONING_PROFILE_SPECIFIER = "Shippax release profile";
 			};
 			name = Debug;

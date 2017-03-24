@@ -123,7 +123,7 @@
 
 - (void)campaignManager:(MRCampaignManager *)manager didFailWithError:(NSError *)error {
     
-    NSLog(@"Campaign manager failed with error: %@", error);
+    NSLog(@"Campaign manager failed with error: %@", error.localizedDescription);
     
     //    [[[UIAlertView alloc] initWithTitle:@"Campaign Error"
     //                                message:error.localizedDescription
