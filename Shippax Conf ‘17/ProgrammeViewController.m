@@ -73,7 +73,7 @@
     self.programmeNameArray = [NSMutableArray new];
     
     [self.programmeDetailsArray addObject:[[self.programmeDic valueForKey:@"Wednesday, April 5"] valueForKey:@"Check-in opens in the terminal at Civitavecchia"]];
-    [self.programmeNameArray addObject:@" Check-in opens in the terminal at Civitavecchia"];
+    [self.programmeNameArray addObject:@"Check-in opens in the terminal at Civitavecchia"];
     
     [self.programmeDetailsArray addObject:[[self.programmeDic valueForKey:@"Wednesday, April 5"] valueForKey:@"Embarkation & check-in to cabins"]];
     [self.programmeNameArray addObject:@"Embarkation & check-in to cabins"];
@@ -129,8 +129,9 @@
     [self.programmeDetailsArray addObject:[[self.programmeDic valueForKey:@"Wednesday, April 5"] valueForKey:@"Night cap, sponsored by Port of Ystad, networking"]];
     [self.programmeNameArray addObject:@"Night cap, sponsored by Port of Ystad, networking"];
     
-    
+    [self.programmeTableView setNeedsLayout];
     [self.programmeTableView reloadData];
+    [self.programmeTableView setNeedsLayout];
 
 }
 
@@ -197,8 +198,9 @@
     [self.programmeNameArray addObject:@"Night cap, sponsored by Onorato Armatori, networking"];
 
     
-    
+    [self.programmeTableView setNeedsLayout];
     [self.programmeTableView reloadData];
+    [self.programmeTableView setNeedsLayout];
     
 }
 
@@ -224,7 +226,9 @@
     [self.programmeNameArray addObject:@"LA SUPERBA departure"];
     
     
+    [self.programmeTableView setNeedsLayout];
     [self.programmeTableView reloadData];
+    [self.programmeTableView setNeedsLayout];
     
 }
 

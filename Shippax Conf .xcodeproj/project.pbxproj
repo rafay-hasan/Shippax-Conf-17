@@ -63,6 +63,7 @@
 		BB46D8C81E83E99300CAF826 /* InboxDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46D8C71E83E99300CAF826 /* InboxDetailsViewController.m */; };
 		BB46D8CB1E83FF1200CAF826 /* SliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46D8CA1E83FF1200CAF826 /* SliderTableViewCell.m */; };
 		BB6651C71E88EA7C00C53608 /* insetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6651C61E88EA7C00C53608 /* insetLabel.m */; };
+		BB6651CA1E891CEE00C53608 /* MSNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6651C91E891CEE00C53608 /* MSNearbyViewController.m */; };
 		BB66A1EE1E8550640028A2B9 /* Meridian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB66A1ED1E8550640028A2B9 /* Meridian.framework */; };
 		BB66A1F01E8550690028A2B9 /* Meridian.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB66A1EF1E8550690028A2B9 /* Meridian.bundle */; };
 		BB7B22451E83A47600740010 /* ProgrammeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7B22441E83A47600740010 /* ProgrammeHeaderView.xib */; };
@@ -178,6 +179,8 @@
 		BB46D8CA1E83FF1200CAF826 /* SliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderTableViewCell.m; sourceTree = "<group>"; };
 		BB6651C51E88EA7C00C53608 /* insetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = insetLabel.h; sourceTree = "<group>"; };
 		BB6651C61E88EA7C00C53608 /* insetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = insetLabel.m; sourceTree = "<group>"; };
+		BB6651C81E891CEE00C53608 /* MSNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNearbyViewController.h; sourceTree = "<group>"; };
+		BB6651C91E891CEE00C53608 /* MSNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNearbyViewController.m; sourceTree = "<group>"; };
 		BB66A1ED1E8550640028A2B9 /* Meridian.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Meridian.framework; sourceTree = "<group>"; };
 		BB66A1EF1E8550690028A2B9 /* Meridian.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Meridian.bundle; sourceTree = "<group>"; };
 		BB7B22441E83A47600740010 /* ProgrammeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammeHeaderView.xib; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 			children = (
 				BB2E5D5A1E79731B00768B60 /* MapViewController.h */,
 				BB2E5D5B1E79731B00768B60 /* MapViewController.m */,
+				BB6651C81E891CEE00C53608 /* MSNearbyViewController.h */,
+				BB6651C91E891CEE00C53608 /* MSNearbyViewController.m */,
 			);
 			name = Aruba;
 			sourceTree = "<group>";
@@ -650,6 +655,7 @@
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
 				BB46D8C81E83E99300CAF826 /* InboxDetailsViewController.m in Sources */,
 				BBA72BB61E829B4900BED342 /* ProgrammeTableViewCell.m in Sources */,
+				BB6651CA1E891CEE00C53608 /* MSNearbyViewController.m in Sources */,
 				BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */,
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
 				BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */,
@@ -797,9 +803,9 @@
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MeridianAppId = 6204238904950784;
-				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
-				MeridianMapId = 5714163003293696;
+				MeridianAppId = 5376006;
+				MeridianDeviceToken = d14898b778bf7bffc0fa0f22c4dca22f3592659e;
+				MeridianMapId = 13001;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = Shippax;
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
@@ -821,9 +827,9 @@
 				INFOPLIST_FILE = "Shippax Conf ‘17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MeridianAppId = 6204238904950784;
-				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
-				MeridianMapId = 5714163003293696;
+				MeridianAppId = 5376006;
+				MeridianDeviceToken = d14898b778bf7bffc0fa0f22c4dca22f3592659e;
+				MeridianMapId = 13001;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = Shippax;
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
