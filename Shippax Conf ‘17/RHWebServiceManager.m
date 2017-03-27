@@ -146,17 +146,23 @@
     NSMutableArray *speakerItemsArray = [NSMutableArray new];
     
     NSArray *tempArray = (NSArray *)response;
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    tempArray = [tempArray sortedArrayUsingDescriptors:sortDescriptors];
+
+    
     for(NSInteger i = 0; i< tempArray.count; i++)
     {
         SpeakerWebServiceObject *object = [SpeakerWebServiceObject new];
         
         object.speakerName = [[tempArray objectAtIndex:i] valueForKey:@"title"];
-        NSLog(@"Name is %@",object.speakerName);
+
         object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
         object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
         object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"<strong>" withString:@""];
         object.speakerName = [object.speakerName stringByReplacingOccurrencesOfString:@"</strong>" withString:@""];
-        //[[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"title"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
         object.speakerDetails = [[tempArray objectAtIndex:i]valueForKey:@"description"];
         object.speakerImageUrlStr = [[tempArray objectAtIndex:i]valueForKey:@"imageUrl"];
         

@@ -13,6 +13,7 @@
 #import "SliderTableViewCell.h"
 #import "HomeWebServiceObject.h"
 #import "UIImageView+AFNetworking.h"
+#import "SVProgressHUD.h"
 
 @interface HomeViewController ()<KASlideShowDelegate,KASlideShowDataSource,RHWebServiceDelegate,UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>
 {
@@ -107,6 +108,7 @@
 
 -(void) CallHomeWebservice
 {
+    [SVProgressHUD show];
     self.view.userInteractionEnabled = NO;
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestTypeHome Delegate:self];
     [self.myWebservice getDataFromWebURL:[NSString stringWithFormat:@"%@HomeItems",BASE_URL_API]];
@@ -115,6 +117,7 @@
 
 -(void) dataFromWebReceivedSuccessfully:(id) responseObj
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     
     if(self.myWebservice.requestType == HTTPRequestTypeHome)
@@ -131,6 +134,7 @@
 
 -(void) dataFromWebReceiptionFailed:(NSError*) error
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

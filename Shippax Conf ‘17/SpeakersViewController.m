@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "SpeakersCollectionViewCell.h"
 #import "SpeakerWebServiceObject.h"
+#import "SVProgressHUD.h"
 
 @interface SpeakersViewController ()<KASlideShowDelegate,KASlideShowDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate,UIWebViewDelegate>
 {
@@ -165,6 +166,7 @@
 
 -(void) CallSpeakersWebservice
 {
+    [SVProgressHUD show];
     self.view.userInteractionEnabled = NO;
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestTypeSpeakers Delegate:self];
     [self.myWebservice getDataFromWebURL:[NSString stringWithFormat:@"%@Speakers",BASE_URL_API]];
@@ -173,6 +175,7 @@
 
 -(void) dataFromWebReceivedSuccessfully:(id) responseObj
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     
     if(self.myWebservice.requestType == HTTPRequestTypeSpeakers)
@@ -189,6 +192,7 @@
 
 -(void) dataFromWebReceiptionFailed:(NSError*) error
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

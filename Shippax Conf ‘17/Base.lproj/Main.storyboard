@@ -356,6 +356,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notifications" id="LcB-KL-xwO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SE6-F6-yU8"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="mh9-8E-FkV">
                             <connections>
                                 <action selector="messageEditAction:" destination="XQP-TX-DOt" id="Ra5-KC-o0Q"/>

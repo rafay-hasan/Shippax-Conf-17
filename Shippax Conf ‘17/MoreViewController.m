@@ -75,7 +75,7 @@
     else if (indexPath.section == 2)
     {
         cell.textLabel.text = @"About";
-        cell.imageView.image = [[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        cell.imageView.image = [[UIImage imageNamed:@"video"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     
     cell.textLabel.textColor = [UIColor whiteColor];

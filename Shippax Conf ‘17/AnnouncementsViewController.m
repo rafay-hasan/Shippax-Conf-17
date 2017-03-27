@@ -33,6 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    
     if ([self.inboxTabkeView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.inboxTabkeView setSeparatorInset:UIEdgeInsetsZero];
     }
@@ -176,7 +178,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

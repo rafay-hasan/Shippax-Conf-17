@@ -13,6 +13,7 @@
 #import "ExhibitorCollectionViewCell.h"
 #import "SponsorCollectionReusableView.h"
 #import "SponsorDetailsViewController.h"
+#import "SVProgressHUD.h"
 
 @interface ExhibitorsViewController ()<RHWebServiceDelegate,UICollectionViewDelegate,UICollectionViewDataSource,KASlideShowDelegate,KASlideShowDataSource>
 {  
@@ -191,6 +192,7 @@
 
 -(void) CallExhibitorWebservice
 {
+    [SVProgressHUD show];
     self.view.userInteractionEnabled = NO;
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestTypeExhibitor Delegate:self];
     [self.myWebservice getDataFromWebURL:[NSString stringWithFormat:@"%@exhibitors",BASE_URL_API]];
@@ -199,11 +201,17 @@
 
 -(void) dataFromWebReceivedSuccessfully:(id) responseObj
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     
     if(self.myWebservice.requestType == HTTPRequestTypeExhibitor)
     {
         NSArray *tempArray = (NSArray *)responseObj;
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position"
+                                                     ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        tempArray = [tempArray sortedArrayUsingDescriptors:sortDescriptors];
         self.exhibitorsDataArray = [NSArray arrayWithArray:tempArray];
         //self.speakerObject = [self.speakersDataArray objectAtIndex:0];
         //[self loadDetailsWebview:self.speakerObject.speakerDetails];
@@ -215,6 +223,7 @@
 
 -(void) dataFromWebReceiptionFailed:(NSError*) error
 {
+    [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
