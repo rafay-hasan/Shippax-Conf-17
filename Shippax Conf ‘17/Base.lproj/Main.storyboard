@@ -717,9 +717,17 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lfS-lK-26W">
                                                     <rect key="frame" x="1" y="1" width="143" height="143"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="143" id="YGa-YK-U4M"/>
                                                         <constraint firstAttribute="width" constant="143" id="gpb-yZ-MR2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-7w-vrL">
+                                                    <rect key="frame" x="1" y="1" width="143" height="143"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="143" id="48b-RG-W0D"/>
+                                                        <constraint firstAttribute="width" constant="143" id="Dne-TA-8wC"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Björn BLOMQVIST ddddd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03i-5h-aL5">
@@ -736,17 +744,22 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="uS1-7w-vrL" firstAttribute="top" secondItem="gmJ-x0-j1w" secondAttribute="top" constant="1" id="4GS-vj-ciR"/>
                                             <constraint firstItem="03i-5h-aL5" firstAttribute="leading" secondItem="gmJ-x0-j1w" secondAttribute="leading" constant="3" id="5xp-f4-xU7"/>
                                             <constraint firstAttribute="bottom" secondItem="lfS-lK-26W" secondAttribute="bottom" constant="1" id="6ub-3E-4Ap"/>
                                             <constraint firstAttribute="trailing" secondItem="lfS-lK-26W" secondAttribute="trailing" constant="1" id="IgI-vo-eQu"/>
                                             <constraint firstAttribute="bottom" secondItem="03i-5h-aL5" secondAttribute="bottom" constant="1" id="aXS-IU-Vfx"/>
+                                            <constraint firstAttribute="bottom" secondItem="uS1-7w-vrL" secondAttribute="bottom" constant="1" id="bI0-vN-Tid"/>
                                             <constraint firstItem="lfS-lK-26W" firstAttribute="top" secondItem="gmJ-x0-j1w" secondAttribute="top" constant="1" id="mtx-SZ-deh"/>
+                                            <constraint firstItem="uS1-7w-vrL" firstAttribute="leading" secondItem="gmJ-x0-j1w" secondAttribute="leading" constant="1" id="rWQ-9S-lgh"/>
+                                            <constraint firstAttribute="trailing" secondItem="uS1-7w-vrL" secondAttribute="trailing" constant="1" id="tg0-Do-ybS"/>
                                             <constraint firstItem="lfS-lK-26W" firstAttribute="leading" secondItem="gmJ-x0-j1w" secondAttribute="leading" constant="1" id="tlI-b6-lZv"/>
                                             <constraint firstAttribute="trailing" secondItem="03i-5h-aL5" secondAttribute="trailing" constant="3" id="yfI-Qq-HsZ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="speakerImageView" destination="lfS-lK-26W" id="4lB-n3-lKv"/>
                                             <outlet property="speakerName" destination="03i-5h-aL5" id="vme-95-LUm"/>
+                                            <outlet property="speakerSelectedImageView" destination="uS1-7w-vrL" id="2TZ-Sk-C8K"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

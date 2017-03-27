@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *speakerName;
 @property (weak, nonatomic) IBOutlet UIWebView *speakerNameWebView;
+@property (weak, nonatomic) IBOutlet UIImageView *speakerSelectedImageView;
 
 
 @end

@@ -16,11 +16,14 @@
 @interface SpeakersViewController ()<KASlideShowDelegate,KASlideShowDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate,UIWebViewDelegate>
 {
     NSMutableArray * _datasource;
+    NSInteger selectedItem;
 }
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
 @property (weak, nonatomic) IBOutlet UICollectionView *speakerCollectionView;
 @property (weak, nonatomic) IBOutlet UIWebView *speakerDetailWebview;
+
+
 
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *speakersDataArray;
@@ -34,6 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    selectedItem = 0;
     self.title = @"Speakers";
     
     self.speakerObject = [SpeakerWebServiceObject new];
@@ -122,6 +126,15 @@
     NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.speakerObject.speakerName];
     [cell.speakerNameWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
     cell.speakerNameWebView.scrollView.scrollEnabled = NO;
+    
+    if(indexPath.row == selectedItem)
+    {
+        cell.speakerSelectedImageView.backgroundColor = [UIColor colorWithRed:0.46 green:0.02 blue:0.07 alpha:0.6];
+    }
+    else
+    {
+        cell.speakerSelectedImageView.backgroundColor = [UIColor clearColor];
+    }
 
     [cell.speakerImageView setImageWithURL:[NSURL URLWithString:self.speakerObject.speakerImageUrlStr] placeholderImage:[UIImage imageNamed:@"SpeakerPlaceholder"]];
    
@@ -130,8 +143,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    selectedItem = indexPath.row;
     self.speakerObject = [self.speakersDataArray objectAtIndex:indexPath.row];
     [self loadDetailsWebview:self.speakerObject.speakerDetails];
+    [self.speakerCollectionView reloadData];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
