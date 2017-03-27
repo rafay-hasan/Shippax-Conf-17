@@ -129,9 +129,10 @@
     [self.programmeDetailsArray addObject:[[self.programmeDic valueForKey:@"Wednesday, April 5"] valueForKey:@"Night cap, sponsored by Port of Ystad, networking"]];
     [self.programmeNameArray addObject:@"Night cap, sponsored by Port of Ystad, networking"];
     
-    [self.programmeTableView setNeedsLayout];
+
     [self.programmeTableView reloadData];
-    [self.programmeTableView setNeedsLayout];
+    [self.programmeTableView setContentOffset:CGPointZero animated:YES];
+
 
 }
 
@@ -198,9 +199,8 @@
     [self.programmeNameArray addObject:@"Night cap, sponsored by Onorato Armatori, networking"];
 
     
-    [self.programmeTableView setNeedsLayout];
     [self.programmeTableView reloadData];
-    [self.programmeTableView setNeedsLayout];
+     [self.programmeTableView setContentOffset:CGPointZero animated:YES];
     
 }
 
@@ -226,9 +226,9 @@
     [self.programmeNameArray addObject:@"LA SUPERBA departure"];
     
     
-    [self.programmeTableView setNeedsLayout];
+
     [self.programmeTableView reloadData];
-    [self.programmeTableView setNeedsLayout];
+     [self.programmeTableView setContentOffset:CGPointZero animated:YES];
     
 }
 
