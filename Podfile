@@ -11,6 +11,7 @@ target 'Shippax Conf ' do
   pod 'MWFeedParser'
   pod 'AFOAuthClient'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+  pod 'TTTAttributedLabel'
 
 
 end

@@ -62,7 +62,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="200" id="F2c-aG-NI4" customClass="HomeTableViewCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="359" height="200"/>
+                                        <rect key="frame" x="0.0" y="56" width="359" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F2c-aG-NI4" id="Qxa-DQ-THT">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="200"/>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sliderCell" rowHeight="128" id="nYf-Lx-JN1" customClass="SliderTableViewCell">
-                                        <rect key="frame" x="0.0" y="255.5" width="359" height="128"/>
+                                        <rect key="frame" x="0.0" y="256" width="359" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYf-Lx-JN1" id="wrb-1e-7hd">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
@@ -204,7 +204,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lui-8s-xc8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" id="2lj-gI-kjY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UiQ-XS-6IV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UiQ-XS-6IV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -229,7 +229,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qL7-jO-WVE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Map" id="lPr-Gy-tOF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3e4-bd-J5o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3e4-bd-J5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,7 +268,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inboxCell" rowHeight="80" id="IHi-Xv-Xmm" customClass="InboxTableViewCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="359" height="80"/>
+                                        <rect key="frame" x="0.0" y="56" width="359" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHi-Xv-Xmm" id="Qle-iU-YkM">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="80"/>
@@ -372,7 +372,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bNW-Jy-gQA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notifications" image="bulletinIcon" id="FDJ-ax-Hfk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GbD-u2-rnv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GbD-u2-rnv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -465,39 +465,72 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="BXf-j4-ZPI">
+                                                <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BXf-j4-ZPI">
                                                     <rect key="frame" x="111" y="8" width="240" height="94"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoo-A0-dfE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoo-A0-dfE" customClass="insetLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                             <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="AVt-S6-QgF"/>
-                                                            </constraints>
                                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="topEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Jt-xBC">
-                                                            <rect key="frame" x="0.0" y="62" width="240" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Jt-xBC" customClass="insetLabel">
+                                                            <rect key="frame" x="0.0" y="44.5" width="240" height="26"/>
                                                             <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="5sm-ZO-Bez"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="topEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-Q3-RjQ">
-                                                            <rect key="frame" x="0.0" y="82" width="240" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-Q3-RjQ" customClass="insetLabel">
+                                                            <rect key="frame" x="0.0" y="71.5" width="240" height="22.5"/>
                                                             <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="8V3-08-Yza"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="topEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomEdge">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -506,13 +539,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="BXf-j4-ZPI" firstAttribute="top" secondItem="uRc-K1-sOO" secondAttribute="top" constant="8" id="GPF-mT-lG8"/>
                                                 <constraint firstAttribute="bottom" secondItem="jM5-Na-2cT" secondAttribute="bottom" constant="8" id="J1n-x9-Z9u"/>
+                                                <constraint firstItem="BXf-j4-ZPI" firstAttribute="top" secondItem="uRc-K1-sOO" secondAttribute="top" constant="8" id="LX7-ZM-pAF"/>
                                                 <constraint firstItem="jM5-Na-2cT" firstAttribute="leading" secondItem="uRc-K1-sOO" secondAttribute="leading" constant="8" id="MTQ-7a-lUr"/>
+                                                <constraint firstItem="BXf-j4-ZPI" firstAttribute="leading" secondItem="jM5-Na-2cT" secondAttribute="trailing" constant="8" id="R2L-kK-6gN"/>
+                                                <constraint firstAttribute="bottom" secondItem="BXf-j4-ZPI" secondAttribute="bottom" constant="8" id="Rlf-S2-ETG"/>
                                                 <constraint firstItem="jM5-Na-2cT" firstAttribute="top" secondItem="uRc-K1-sOO" secondAttribute="top" constant="8" id="TZo-oh-6d5"/>
-                                                <constraint firstAttribute="bottom" secondItem="BXf-j4-ZPI" secondAttribute="bottom" constant="8" id="YBC-dm-rAv"/>
-                                                <constraint firstItem="BXf-j4-ZPI" firstAttribute="leading" secondItem="jM5-Na-2cT" secondAttribute="trailing" constant="8" id="k3S-Qy-fjS"/>
-                                                <constraint firstAttribute="trailing" secondItem="BXf-j4-ZPI" secondAttribute="trailing" constant="8" id="nVo-kM-7RO"/>
+                                                <constraint firstAttribute="trailing" secondItem="BXf-j4-ZPI" secondAttribute="trailing" constant="8" id="ugl-yb-jNb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -563,7 +596,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vN0-7z-6bx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Programme" image="programmeIcon" id="6ci-as-55c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5Fu-WC-fxO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="5Fu-WC-fxO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -602,7 +635,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreCell" id="b9b-TJ-K9N">
-                                        <rect key="frame" x="0.0" y="55.5" width="359" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b9b-TJ-K9N" id="ERr-EW-A7l">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
@@ -670,7 +703,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SpeakerCell" id="gmJ-x0-j1w" customClass="SpeakersCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="7.5" width="145" height="145"/>
+                                        <rect key="frame" x="0.0" y="8" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
@@ -924,7 +957,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="aboutCell" rowHeight="44" id="2yr-FD-ud1" customClass="AboutTableViewCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="359" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2yr-FD-ud1" id="FLC-gY-3tq">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
@@ -983,7 +1016,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21m-EI-lG5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="More" image="moreIcon" id="ZE1-lj-EL2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="exa-aS-Xhz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="exa-aS-Xhz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>

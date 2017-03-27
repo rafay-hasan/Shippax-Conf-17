@@ -250,11 +250,40 @@
     
     cell.programmeNameLabel.text = [self.programmeNameArray objectAtIndex:indexPath.row];
     
+    if([[self.programmeNameArray objectAtIndex:indexPath.row] length] > 0)
+    {
+        cell.programmeNameLabel.edgeInsets = UIEdgeInsetsMake(8.0,8.0, 8.0, 8.0);
+    }
+    else
+    {
+        cell.programmeNameLabel.edgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+    }
+    //cell.programmeNameLabel.edgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0);
+    
     NSString *subProgramme = [[self.programmeDetailsArray objectAtIndex:indexPath.row] objectAtIndex:1];
     subProgramme = [subProgramme stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
     
+    if(subProgramme.length > 0)
+    {
+        cell.subProgrammeNameLabel.edgeInsets = UIEdgeInsetsMake(8.0,8.0, 8.0, 8.0);
+    }
+    else
+    {
+        cell.subProgrammeNameLabel.edgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+    }
+    
     NSString *speakers = [[self.programmeDetailsArray objectAtIndex:indexPath.row] objectAtIndex:2];
     speakers = [speakers stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
+    
+    if(speakers.length > 0)
+    {
+        cell.speakersNameLabel.edgeInsets = UIEdgeInsetsMake(8.0,8.0, 8.0, 8.0);
+    }
+    else
+    {
+        cell.speakersNameLabel.edgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+    }
+
     
     cell.localTimeLabel.text = [[self.programmeDetailsArray objectAtIndex:indexPath.row] objectAtIndex:0];
     cell.subProgrammeNameLabel.text = subProgramme;// [[self.aprilFifthProgrammeArray objectAtIndex:indexPath.row] objectAtIndex:1];

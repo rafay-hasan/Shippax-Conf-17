@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "insetLabel.h"
 
 @interface ProgrammeTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *localTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *programmeNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *subProgrammeNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *speakersNameLabel;
+@property (weak, nonatomic) IBOutlet insetLabel *programmeNameLabel;
+@property (weak, nonatomic) IBOutlet insetLabel *subProgrammeNameLabel;
+@property (weak, nonatomic) IBOutlet insetLabel *speakersNameLabel;
 
 
 @end
