@@ -27,27 +27,35 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+//    self = [super initWithFrame:frame];
+//    if (self)
+//    {
+//        self.edgeInsets = UIEdgeInsetsMake(self.topEdge, self.leftEdge, self.bottomEdge, self.rightEdge);
+//    }
+//    return self;
+    
     self = [super initWithFrame:frame];
-    if (self)
-    {
-        self.edgeInsets = UIEdgeInsetsMake(self.topEdge, self.leftEdge, self.bottomEdge, self.rightEdge);
+    if (self) {
+        self.textAlignment = NSTextAlignmentRight;
     }
     return self;
 }
 
-- (void)drawTextInRect:(CGRect)rect
-{
-    self.edgeInsets = UIEdgeInsetsMake(self.topEdge, self.leftEdge, self.bottomEdge, self.rightEdge);
-    
-    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.edgeInsets)];
-}
+//- (void)drawTextInRect:(CGRect)rect
+//{
+//    self.edgeInsets = UIEdgeInsetsMake(self.topEdge, self.leftEdge, self.bottomEdge, self.rightEdge);
+//    
+//    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.edgeInsets)];
+//}
 
 - (CGSize)intrinsicContentSize
 {
+//    CGSize size = [super intrinsicContentSize];
+//    size.width  += self.edgeInsets.left + self.edgeInsets.right;
+//    size.height += self.edgeInsets.top + self.edgeInsets.bottom ;
+//    return size;
     CGSize size = [super intrinsicContentSize];
-    size.width  += self.edgeInsets.left + self.edgeInsets.right;
-    size.height += self.edgeInsets.top + self.edgeInsets.bottom ;
-    return size;
+    return CGSizeMake(size.width + 10.0, size.height);
 }
 
 
