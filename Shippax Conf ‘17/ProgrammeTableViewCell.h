@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet TTTAttributedLabel *programmeNameLabel;
 @property (weak, nonatomic) IBOutlet TTTAttributedLabel *subProgrammeNameLabel;
 @property (weak, nonatomic) IBOutlet TTTAttributedLabel *speakersNameLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *localTimeHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *programmeNameHeight;
+@property (weak, nonatomic) IBOutlet UILabel *accessoryLabelHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *helperLabelHeight;
+
 
 
 @end

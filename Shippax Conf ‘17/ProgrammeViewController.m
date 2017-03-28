@@ -10,7 +10,7 @@
 #import "ProgrammeTableViewCell.h"
 #import "ProgrammeHeaderView.h"
 
-@interface ProgrammeViewController ()
+@interface ProgrammeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) NSDictionary *programmeDic;
 @property (strong,nonatomic) NSMutableArray *programmeDetailsArray,*programmeNameArray;
@@ -247,6 +247,13 @@
     return self.programmeDetailsArray.count;//[[self.programmeDic valueForKey:@"Wednesday, April 5"] count];
 }
 
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    ProgrammeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programmeCell" forIndexPath:indexPath];
+//    
+//    cell.programmeNameLabel.text = [self.programmeNameArray objectAtIndex:indexPath.row];
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"programmeCell";
@@ -289,6 +296,15 @@
     }
 
     
+    if(speakers.length == 0 && subProgramme.length == 0)
+    {
+        cell.helperLabelHeight.constant = 2;
+    }
+    else
+    {
+        cell.helperLabelHeight.constant = 0;
+    }
+    
     cell.localTimeLabel.text = [[self.programmeDetailsArray objectAtIndex:indexPath.row] objectAtIndex:0];
     cell.subProgrammeNameLabel.text = subProgramme;
     cell.speakersNameLabel.text =  speakers;
@@ -307,13 +323,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 5.00;
+    return 4.0;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 5.00;
+    return 1.0;
 }
 
 

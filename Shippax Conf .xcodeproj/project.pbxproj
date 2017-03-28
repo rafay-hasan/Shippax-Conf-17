@@ -48,6 +48,7 @@
 		BB2E5DD11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC11E7988CF00768B60 /* UIImageView+HighlightedWebCache.m */; };
 		BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */; };
 		BB2E5DD31E7988CF00768B60 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */; };
+		BB38EFB21E8A3AD800731D86 /* MainSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB38EFB11E8A3AD800731D86 /* MainSponsorTableViewCell.m */; };
 		BB3BCFDB1E7FB0E5007B1EE0 /* HomeWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */; };
 		BB3BCFDE1E7FB3DE007B1EE0 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */; };
 		BB3BCFE11E800D68007B1EE0 /* StreamingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BCFE01E800D68007B1EE0 /* StreamingConnection.m */; };
@@ -152,6 +153,8 @@
 		BB2E5DC31E7988CF00768B60 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BB2E5DC41E7988CF00768B60 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BB2E5DC51E7988CF00768B60 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BB38EFB01E8A3AD800731D86 /* MainSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSponsorTableViewCell.h; sourceTree = "<group>"; };
+		BB38EFB11E8A3AD800731D86 /* MainSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSponsorTableViewCell.m; sourceTree = "<group>"; };
 		BB3BCFD91E7FB0E5007B1EE0 /* HomeWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWebServiceObject.h; sourceTree = "<group>"; };
 		BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWebServiceObject.m; sourceTree = "<group>"; };
 		BB3BCFDC1E7FB3DE007B1EE0 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				BB3BCFDD1E7FB3DE007B1EE0 /* HomeTableViewCell.m */,
 				BB46D8C91E83FF1200CAF826 /* SliderTableViewCell.h */,
 				BB46D8CA1E83FF1200CAF826 /* SliderTableViewCell.m */,
+				BB38EFB01E8A3AD800731D86 /* MainSponsorTableViewCell.h */,
+				BB38EFB11E8A3AD800731D86 /* MainSponsorTableViewCell.m */,
 				BB3BCFD91E7FB0E5007B1EE0 /* HomeWebServiceObject.h */,
 				BB3BCFDA1E7FB0E5007B1EE0 /* HomeWebServiceObject.m */,
 			);
@@ -525,7 +530,7 @@
 				TargetAttributes = {
 					BB2E5D381E796E2600768B60 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 6E6WT3QCX4;
+						DevelopmentTeam = 79YLMQ62DM;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -660,6 +665,7 @@
 				BB1035171E7ACB3C009B9AE6 /* RHWebServiceManager.m in Sources */,
 				BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */,
 				BB2E5DC61E7988CF00768B60 /* NSData+ImageContentType.m in Sources */,
+				BB38EFB21E8A3AD800731D86 /* MainSponsorTableViewCell.m in Sources */,
 				BB2E5DCA1E7988CF00768B60 /* SDWebImageDownloader.m in Sources */,
 				BB2E5D5C1E79731B00768B60 /* MapViewController.m in Sources */,
 				BB2E5D591E79730400768B60 /* HomeViewController.m in Sources */,
@@ -794,8 +800,8 @@
 			baseConfigurationReference = 646275BB1B17C5687409AC98 /* Pods-Shippax Conf .debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 6E6WT3QCX4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -806,10 +812,10 @@
 				MeridianAppId = 6204238904950784;
 				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
 				MeridianMapId = 5714163003293696;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcp.Shippax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = Shippax;
-				PROVISIONING_PROFILE = "fd9f0983-a832-45e0-8920-7ea2657a21c0";
-				PROVISIONING_PROFILE_SPECIFIER = "Shippax release profile";
+				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";
 			};
 			name = Debug;
 		};
@@ -818,8 +824,8 @@
 			baseConfigurationReference = AA5835BB1938CD2BB1B218D9 /* Pods-Shippax Conf .release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 6E6WT3QCX4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -830,10 +836,10 @@
 				MeridianAppId = 6204238904950784;
 				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
 				MeridianMapId = 5714163003293696;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcp.Shippax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
 				PRODUCT_NAME = Shippax;
-				PROVISIONING_PROFILE = "fd9f0983-a832-45e0-8920-7ea2657a21c0";
-				PROVISIONING_PROFILE_SPECIFIER = "Shippax release profile";
+				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";
 			};
 			name = Release;
 		};

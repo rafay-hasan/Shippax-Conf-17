@@ -14,6 +14,7 @@
 #import "HomeWebServiceObject.h"
 #import "UIImageView+AFNetworking.h"
 #import "SVProgressHUD.h"
+#import "MainSponsorTableViewCell.h"
 
 @interface HomeViewController ()<KASlideShowDelegate,KASlideShowDataSource,RHWebServiceDelegate,UIWebViewDelegate,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>
 {
@@ -150,7 +151,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.homeDataArray.count + 1;
+    return self.homeDataArray.count + 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -158,21 +159,6 @@
     return 1;
 }
 
-//- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath
-//{
-//    if(indexPath.section == 0)
-//    {
-//        static NSString *identifier = @"sliderCell";
-//        SliderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-//        
-//        if(slideShowing == NO)
-//        {
-//            //[cell.sliderView start];
-//            slideShowing = YES;
-//        }
-//        
-//    }
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -191,17 +177,18 @@
         
         if(slideShowing == NO)
         {
-            //[cell.sliderView start];
             slideShowing = YES;
         }
         
+        return cell;
+    }
+    else if(indexPath.section == 4)
+    {
+        static NSString *identifier = @"sponsorCell";
+        MainSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
-//        if(cell.sliderView.state != KASlideShowStateStarted)
-//            [cell.sliderView start];
-//        
-//        if(cell.sliderView.state == KASlideShowStateStopped)
-//            [cell.sliderView start];
-
+        //cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }

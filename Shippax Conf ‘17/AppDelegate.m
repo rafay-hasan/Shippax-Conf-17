@@ -176,129 +176,6 @@
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults]valueForKey:@"LastTime"],@"startTime",[[[UIDevice currentDevice] identifierForVendor] UUIDString],@"clientid", nil];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json",@"text/plain",@"text/xml", nil];
-    
-    [manager POST:requestURL parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         NSInteger statusCode = operation.response.statusCode;
-         
-         if(statusCode == 200)
-         {
-             
-             if([responseObject isKindOfClass:[NSArray class]])
-             {
-                 NSArray *queedArray = (NSArray *)responseObject;
-                 for(NSInteger i=0; i < queedArray.count; i++)
-                 {
-                     
-                     NSString *title;
-                     
-                     if([[[queedArray objectAtIndex:i] valueForKey:@"title"] isKindOfClass:[NSString class]])
-                     {
-                         title = [[queedArray objectAtIndex:i] valueForKey:@"title"];
-                         
-                     }
-                     else
-                         title = @"";
-                     
-                     
-                     
-                     NSString *messageDetails;
-                     
-                     if([[[queedArray objectAtIndex:i] valueForKey:@"description"] isKindOfClass:[NSString class]])
-                     {
-                         messageDetails = [[queedArray objectAtIndex:i] valueForKey:@"description"];
-                         
-                     }
-                     else
-                         messageDetails = @"";
-                     
-                     NSString *featuredImage;
-                     
-                     if([[[queedArray objectAtIndex:i] valueForKey:@"image_url"] isKindOfClass:[NSString class]])
-                     {
-                         featuredImage = [NSString stringWithFormat:@"%@%@",SRConnectionBaseURL,[[queedArray objectAtIndex:i] valueForKey:@"image_url"]];
-                     }
-                     else
-                         featuredImage = @"";
-                     
-                     
-                     [self saveMessageWithId:[self retrieveMessageId] title:title details:messageDetails imageUrl:featuredImage withUnixTime:0.0];
-                     
-                     
-                     [Inbox_Shared_Object sharedInstance].totalCountNumber = [NSNumber numberWithInteger:[self retrieveTotalUnreadMessage]];
-                     
-                     if([Inbox_Shared_Object sharedInstance].totalCountNumber >= [NSNumber numberWithInt:1])
-                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = [NSString stringWithFormat:@"%@",[Inbox_Shared_Object sharedInstance].totalCountNumber];
-                     else
-                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = nil;
-                     
-                     
-                     [[NSNotificationCenter defaultCenter] postNotificationName:@"InboxNotification" object:nil];
-                     
-                     
-                     UILocalNotification *bulletin = [[UILocalNotification alloc] init];
-                     
-                     bulletin.alertBody = title;
-                     
-                     bulletin.soundName = UILocalNotificationDefaultSoundName;
-                     
-                     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"bulletin" forKey:@"notificationName"];
-                     
-                     bulletin.userInfo = userInfo;
-                     
-                     [[UIApplication sharedApplication] presentLocalNotificationNow:bulletin];
-                     
-                 }
-                 
-                 NSDateFormatter *bulletinDateFormatter = [[NSDateFormatter alloc] init];
-                 NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-                 [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-                 NSDate *date = [NSDate date];
-                 
-                 [bulletinDateFormatter setTimeZone:timeZone];
-                 [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-                 [[NSUserDefaults standardUserDefaults]setObject:[bulletinDateFormatter stringFromDate:date] forKey:@"LastTime"];
-                 [[NSUserDefaults standardUserDefaults] synchronize];
-                 
-                 [self establishWebSocketConnection];
-             }
-         }
-         else
-         {
-             [self establishWebSocketConnection];
-         }
-         
-     }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         [self establishWebSocketConnection];
-     }
-     ];
-
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
-}
-
-
--(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    
-    NSString *requestURL = [NSString stringWithFormat:@"%@/api/Schedule/FindQueuedBulletin",SRConnectionBaseURL];
-    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults]valueForKey:@"LastTime"],@"startTime",[[[UIDevice currentDevice] identifierForVendor] UUIDString],@"clientid", nil];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json",@"text/plain",@"text/xml", nil];
     
     [manager POST:requestURL parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject)
@@ -396,6 +273,159 @@
                           ;
                       }
                           failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                      {
+                          ;
+                      }
+                      ];
+                     
+                     
+                 }
+                 
+                 NSDateFormatter *bulletinDateFormatter = [[NSDateFormatter alloc] init];
+                 NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+                 [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                 NSDate *date = [NSDate date];
+                 
+                 [bulletinDateFormatter setTimeZone:timeZone];
+                 [bulletinDateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                 [[NSUserDefaults standardUserDefaults]setObject:[bulletinDateFormatter stringFromDate:date] forKey:@"LastTime"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+                 [self establishWebSocketConnection];
+                 
+             }
+             
+         }
+         else
+         {
+             [self establishWebSocketConnection];
+         }
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+          [self establishWebSocketConnection];
+
+     }
+     ];
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Saves changes in the application's managed object context before the application terminates.
+    [self saveContext];
+}
+
+
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    
+    NSString *requestURL = [NSString stringWithFormat:@"%@/api/Schedule/FindQueuedBulletin",SRConnectionBaseURL];
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults]valueForKey:@"LastTime"],@"startTime",[[[UIDevice currentDevice] identifierForVendor] UUIDString],@"clientid", nil];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json",@"text/plain",@"text/xml", nil];
+    NSLog(@"Data is %@",data);
+    
+    [manager POST:requestURL parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         
+         NSInteger statusCode = operation.response.statusCode;
+         NSString *messageId = [NSString new];
+         
+         if(statusCode == 200)
+         {
+             if([responseObject isKindOfClass:[NSArray class]])
+             {
+                 NSArray *queedArray = (NSArray *)responseObject;
+                 
+                 NSLog(@"response is %@",responseObject);
+                 
+                 for(NSInteger i=0; i < queedArray.count; i++)
+                 {
+                     NSString *title;
+                     
+                     if([[[queedArray objectAtIndex:i] valueForKey:@"title"] isKindOfClass:[NSString class]])
+                     {
+                         title = [[queedArray objectAtIndex:i] valueForKey:@"title"];
+                     }
+                     else
+                         title = @"";
+                     
+                     
+                     NSString *messageDetails;
+                     
+                     if([[[queedArray objectAtIndex:i] valueForKey:@"description"] isKindOfClass:[NSString class]])
+                     {
+                         messageDetails = [[queedArray objectAtIndex:i] valueForKey:@"description"];
+                         
+                     }
+                     else
+                         messageDetails = @"";
+                     
+                     NSString *featuredImage;
+                     
+                     if([[[queedArray objectAtIndex:i] valueForKey:@"image_url"] isKindOfClass:[NSString class]])
+                     {
+                         featuredImage = [NSString stringWithFormat:@"%@%@",SRConnectionBaseURL,[[queedArray objectAtIndex:i] valueForKey:@"image_url"]];
+                     }
+                     else
+                         featuredImage = @"";
+                     
+                     if(i == 0)
+                         messageId = [[queedArray objectAtIndex:i] valueForKey:@"id"];
+                     else
+                         messageId = [NSString stringWithFormat:@"%@,%@",messageId,[[queedArray objectAtIndex:i] valueForKey:@"id"]];
+                     
+                     
+                     [self saveMessageWithId:[self retrieveMessageId] title:title details:messageDetails imageUrl:featuredImage withUnixTime:0.0];
+                     
+                     
+                     [Inbox_Shared_Object sharedInstance].totalCountNumber = [NSNumber numberWithInteger:[self retrieveTotalUnreadMessage]];
+                     
+                     if([Inbox_Shared_Object sharedInstance].totalCountNumber >= [NSNumber numberWithInt:1])
+                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = [NSString stringWithFormat:@"%@",[Inbox_Shared_Object sharedInstance].totalCountNumber];
+                     else
+                         [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = nil;
+                     
+                     
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"InboxNotification" object:nil];
+                     
+                     
+                     UILocalNotification *bulletin = [[UILocalNotification alloc] init];
+                     
+                     bulletin.alertBody = title;
+                     
+                     bulletin.soundName = UILocalNotificationDefaultSoundName;
+                     
+                     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"bulletin" forKey:@"notificationName"];
+                     
+                     bulletin.userInfo = userInfo;
+                     
+                     [[UIApplication sharedApplication] presentLocalNotificationNow:bulletin];
+                     
+                 }
+                 
+                 NSLog(@"Message is is %@",messageId);
+                 
+                 if(messageId.length > 0)
+                 {
+                     NSString *requestURL = [NSString stringWithFormat:@"%@/api/Schedule/AckQueuedBulletin?scheduleId=%@&clientId=%@",SRConnectionBaseURL,messageId,[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+                     requestURL = [requestURL stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+                     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",@"text/plain",@"text/css", nil];
+                     manager.securityPolicy.allowInvalidCertificates = YES;
+                     manager.securityPolicy.validatesDomainName = NO;
+                     
+                     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+                      {
+                          ;
+                      }
+                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
                       {
                           ;
                       }
