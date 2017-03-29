@@ -51,7 +51,7 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(newMessageReceived) name:@"InboxNotification" object:nil];
     
-    self.inboxTabkeView.estimatedRowHeight = 65;
+    self.inboxTabkeView.estimatedRowHeight = 60;
     self.inboxTabkeView.rowHeight = UITableViewAutomaticDimension;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -183,13 +183,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 3.00;
+    return 0.500;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 3.00;
+    return 0.500;
 }
 
 
