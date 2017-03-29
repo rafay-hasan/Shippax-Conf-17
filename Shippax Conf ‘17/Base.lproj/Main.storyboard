@@ -1144,14 +1144,14 @@
                                                 <rect key="frame" x="8" y="8" width="359" height="543"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-iy-Don">
-                                                        <rect key="frame" x="8" y="16" width="343" height="21"/>
+                                                        <rect key="frame" x="12" y="12" width="335" height="21"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-bd-fsY">
-                                                        <rect key="frame" x="8" y="38" width="343" height="15"/>
+                                                        <rect key="frame" x="12" y="38" width="335" height="15"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1171,7 +1171,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4V-ie-1zr">
-                                                        <rect key="frame" x="5" y="235" width="349" height="128"/>
+                                                        <rect key="frame" x="8" y="235" width="343" height="128"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="aTl-Nz-t5o"/>
@@ -1186,21 +1186,21 @@
                                                 <constraints>
                                                     <constraint firstItem="y4V-ie-1zr" firstAttribute="top" secondItem="abv-gI-gdR" secondAttribute="bottom" constant="8" id="0CH-OU-fDi"/>
                                                     <constraint firstItem="abv-gI-gdR" firstAttribute="top" secondItem="QXH-Rg-yDJ" secondAttribute="bottom" constant="8" id="B0w-wt-SHx"/>
-                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="8" id="DKK-bG-fy9"/>
+                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="12" id="DKK-bG-fy9"/>
                                                     <constraint firstItem="abv-gI-gdR" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="8" id="Efg-CA-gLm"/>
                                                     <constraint firstItem="QXH-Rg-yDJ" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="8" id="Ksn-0X-u0B"/>
-                                                    <constraint firstItem="y4V-ie-1zr" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="5" id="NYb-Ue-cmC"/>
-                                                    <constraint firstItem="Gga-iy-Don" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="8" id="Qxm-lX-xC9"/>
+                                                    <constraint firstItem="y4V-ie-1zr" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="8" id="NYb-Ue-cmC"/>
+                                                    <constraint firstItem="Gga-iy-Don" firstAttribute="leading" secondItem="edH-jE-Qb3" secondAttribute="leading" constant="12" id="Qxm-lX-xC9"/>
                                                     <constraint firstItem="abv-gI-gdR" firstAttribute="top" secondItem="QXH-Rg-yDJ" secondAttribute="bottom" constant="8" id="RlV-zO-4S3"/>
                                                     <constraint firstAttribute="trailing" secondItem="abv-gI-gdR" secondAttribute="trailing" constant="8" id="YlS-k1-chQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="QXH-Rg-yDJ" secondAttribute="trailing" constant="8" id="dUM-c1-HMz"/>
-                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="top" secondItem="Gga-iy-Don" secondAttribute="bottom" constant="1" id="guc-8p-Xbj"/>
+                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="top" secondItem="Gga-iy-Don" secondAttribute="bottom" constant="5" id="guc-8p-Xbj"/>
                                                     <constraint firstItem="QXH-Rg-yDJ" firstAttribute="top" secondItem="yaF-bd-fsY" secondAttribute="bottom" constant="8" id="meK-Rl-Eqq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yaF-bd-fsY" secondAttribute="trailing" constant="8" id="q3A-ZQ-Fmp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Gga-iy-Don" secondAttribute="trailing" constant="8" id="qrb-oM-avD"/>
-                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="top" secondItem="Gga-iy-Don" secondAttribute="bottom" constant="1" id="r7k-St-QvV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="y4V-ie-1zr" secondAttribute="trailing" constant="5" id="s1h-U1-Xpn"/>
-                                                    <constraint firstItem="Gga-iy-Don" firstAttribute="top" secondItem="edH-jE-Qb3" secondAttribute="top" constant="16" id="ykl-D6-Rff"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yaF-bd-fsY" secondAttribute="trailing" constant="12" id="q3A-ZQ-Fmp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gga-iy-Don" secondAttribute="trailing" constant="12" id="qrb-oM-avD"/>
+                                                    <constraint firstItem="yaF-bd-fsY" firstAttribute="top" secondItem="Gga-iy-Don" secondAttribute="bottom" constant="5" id="r7k-St-QvV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="y4V-ie-1zr" secondAttribute="trailing" constant="8" id="s1h-U1-Xpn"/>
+                                                    <constraint firstItem="Gga-iy-Don" firstAttribute="top" secondItem="edH-jE-Qb3" secondAttribute="top" constant="12" id="ykl-D6-Rff"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
