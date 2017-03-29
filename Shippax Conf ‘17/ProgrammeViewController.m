@@ -35,7 +35,7 @@
     NSString *pathOfPlist = [[NSBundle mainBundle] pathForResource:@"Programme" ofType:@"plist"];
     self.programmeDic = [[NSDictionary alloc]initWithContentsOfFile:pathOfPlist];
     
-    NSLog(@"dic is %@",self.programmeDic);
+    self.aprilFifthhButton.backgroundColor = [UIColor colorWithRed:0.00 green:0.57 blue:0.99 alpha:1.0];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     

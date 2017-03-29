@@ -22,7 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
 @property (weak, nonatomic) IBOutlet UICollectionView *sponsorsCollectionview;
-
+@property (strong,nonatomic) UIRefreshControl *refreshControl;
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *exhibitorsDataArray;
 
@@ -52,6 +52,11 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(CallExhibitorWebservice)
+             forControlEvents:UIControlEventValueChanged];
+    [self.sponsorsCollectionview addSubview:self.refreshControl];
+    self.sponsorsCollectionview.alwaysBounceVertical = YES;
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -132,6 +137,8 @@
             cell.exhibitorImageView.image = nil;
 
     }
+    
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -160,11 +167,11 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(116.0, 116.0);
+    return CGSizeMake(108.0, 108.0);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(8.0, 0.0, 8.0, 8.0);
+    return UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
@@ -213,8 +220,9 @@
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         tempArray = [tempArray sortedArrayUsingDescriptors:sortDescriptors];
         self.exhibitorsDataArray = [NSArray arrayWithArray:tempArray];
-        //self.speakerObject = [self.speakersDataArray objectAtIndex:0];
-        //[self loadDetailsWebview:self.speakerObject.speakerDetails];
+        
+        if(self.refreshControl)
+            [self.refreshControl endRefreshing];
         
         [self.sponsorsCollectionview reloadData];
     }
@@ -225,6 +233,7 @@
 {
     [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
+    [self.refreshControl endRefreshing];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         

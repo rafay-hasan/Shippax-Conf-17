@@ -103,16 +103,6 @@
         AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-//    else if(indexPath.section == 2)
-//    {
-//        AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
-    //    else if(indexPath.section == 3)
-    //    {
-    //        AboutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"arubaMap"];
-    //        [self.navigationController pushViewController:vc animated:YES];
-    //    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

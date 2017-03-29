@@ -26,7 +26,7 @@
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
-
+@property (strong,nonatomic) UIRefreshControl *dutyFreeItemsRefreshControl;
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (strong,nonatomic) NSArray *homeDataArray;
 @property (strong,nonatomic) HomeWebServiceObject *homeObject;
@@ -68,6 +68,19 @@
     
     self.homeTableView.estimatedRowHeight = 50;
     self.homeTableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.dutyFreeItemsRefreshControl = [[UIRefreshControl alloc] init];
+    
+    self.dutyFreeItemsRefreshControl.backgroundColor = [UIColor clearColor];
+    
+    self.dutyFreeItemsRefreshControl.tintColor = [UIColor lightGrayColor];
+    
+    [self.dutyFreeItemsRefreshControl addTarget:self
+                                         action:@selector(CallHomeWebservice)
+                               forControlEvents:UIControlEventValueChanged];
+    
+    [self.homeTableView addSubview:self.dutyFreeItemsRefreshControl];
+
     
     [self CallHomeWebservice];
 }
@@ -125,8 +138,13 @@
     {
         NSArray *tempArray = (NSArray *)responseObj;
         self.homeDataArray = [NSArray arrayWithArray:tempArray];
-       // self.speakerObject = [self.speakersDataArray objectAtIndex:0];
-        //[self loadDetailsWebview:self.speakerObject.speakerDetails];
+        
+        if (self.dutyFreeItemsRefreshControl)
+        {
+            [self.dutyFreeItemsRefreshControl endRefreshing];
+            
+        }
+        
         
         [self.homeTableView reloadData];
     }
@@ -137,6 +155,14 @@
 {
     [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
+    
+    if (self.dutyFreeItemsRefreshControl)
+    {
+        [self.dutyFreeItemsRefreshControl endRefreshing];
+        [self.homeTableView reloadData];
+        
+    }
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
@@ -187,9 +213,13 @@
         static NSString *identifier = @"sponsorCell";
         MainSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
-        //cell.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.mainSponsorHomeWebView.opaque = NO;
+        cell.mainSponsorHomeWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+        NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#FFFFFF;'>Main Sponsor:"];
+        [cell.mainSponsorHomeWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+        cell.mainSponsorHomeWebView.scrollView.scrollEnabled = NO;
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else
@@ -307,8 +337,7 @@
             [self.homeTableView reloadData];
         }
     }
-    
-    if(aWebView.tag == 1001)
+    else if(aWebView.tag == 1001)
     {
         secondTitleCurrentContentHeight = aWebView.scrollView.contentSize.height;
         
@@ -318,9 +347,7 @@
             [self.homeTableView reloadData];
         }
     }
-
-    
-    if(aWebView.tag == 1002)
+    else if(aWebView.tag == 1002)
     {
         thirdTitleCurrentContentHeight = aWebView.scrollView.contentSize.height;
         
@@ -330,8 +357,7 @@
             [self.homeTableView reloadData];
         }
     }
-    
-    if(aWebView.tag == 2000)
+    else if(aWebView.tag == 2000)
     {
         firstDetailsCurrentContentHeight = aWebView.scrollView.contentSize.height;
         
@@ -341,8 +367,7 @@
             [self.homeTableView reloadData];
         }
     }
-    
-    if(aWebView.tag == 2001)
+    else if(aWebView.tag == 2001)
     {
         secondDetailsCurrentContentHeight = aWebView.scrollView.contentSize.height;
         
@@ -352,9 +377,7 @@
             [self.homeTableView reloadData];
         }
     }
-    
-    
-    if(aWebView.tag == 2002)
+    else if(aWebView.tag == 2002)
     {
         thirdDetailsCurrentContentHeight = aWebView.scrollView.contentSize.height;
         

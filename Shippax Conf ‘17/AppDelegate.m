@@ -46,6 +46,8 @@
     }
 
     
+    NSLog(@"Nao id is %@ app id is %@ token is %@",[[NSBundle mainBundle]objectForInfoDictionaryKey:@"MapId"],[[NSBundle mainBundle]objectForInfoDictionaryKey:@"AppId"],[[NSBundle mainBundle]objectForInfoDictionaryKey:@"DeviceToken"]);
+    
     MRConfig *config = [MRConfig new];
     config.applicationToken = [[NSBundle mainBundle]objectForInfoDictionaryKey:@"DeviceToken"];
     [Meridian configure:config];

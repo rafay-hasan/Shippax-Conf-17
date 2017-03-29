@@ -10,4 +10,7 @@
 
 @interface MainSponsorTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIWebView *mainSponsorHomeWebView;
+
+
 @end
