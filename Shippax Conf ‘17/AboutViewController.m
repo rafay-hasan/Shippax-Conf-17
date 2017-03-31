@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "AboutTableViewCell.h"
+#import "ClientInfoTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface AboutViewController ()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
@@ -63,7 +64,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -73,46 +74,64 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aboutCell" forIndexPath:indexPath];
     
-    if(indexPath.section == 0)
+    if(indexPath.section == 3)
     {
-        NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"firstVideo" ofType:@"html"];
-        NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
-        cell.aboutWebView.scrollView.scrollEnabled = NO;
-        cell.aboutWebViewContentHeight.constant = 176;
+        ClientInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"clientInfoCell" forIndexPath:indexPath];
+        
+        cell.appVersionLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        cell.clientIdLabel.text = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        return cell;
+    }
+    else
+    {
+        AboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aboutCell" forIndexPath:indexPath];
+        
+        if(indexPath.section == 0)
+        {
+            NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"firstVideo" ofType:@"html"];
+            NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+            [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+            cell.aboutWebView.scrollView.scrollEnabled = NO;
+            cell.aboutWebViewContentHeight.constant = 176;
+            
+        }
+        else if (indexPath.section == 1)
+        {
+            NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"secondVideo" ofType:@"html"];
+            NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+            [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+            cell.aboutWebView.scrollView.scrollEnabled = NO;
+            cell.aboutWebViewContentHeight.constant = 176;
+        }
+        else if (indexPath.section == 2)
+        {
+            NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"About" ofType:@"html"];
+            NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+            [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+            cell.aboutWebView.opaque = NO;
+            cell.aboutWebView.mediaPlaybackRequiresUserAction = NO;
+            cell.aboutWebView.allowsInlineMediaPlayback = YES;
+            cell.aboutWebView.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+            htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
+            [cell.aboutWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString] baseURL:nil];
+            cell.aboutWebView.delegate = self;
+            cell.aboutWebView.scrollView.scrollEnabled = NO;
+            cell.aboutWebViewContentHeight.constant = currentContentHeight;
+            
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
 
     }
-    else if (indexPath.section == 1)
-    {
-        NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"secondVideo" ofType:@"html"];
-        NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
-        cell.aboutWebView.scrollView.scrollEnabled = NO;
-        cell.aboutWebViewContentHeight.constant = 176;
-    }
-    else if (indexPath.section == 2)
-    {
-        NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"About" ofType:@"html"];
-        NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        [cell.aboutWebView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
-        cell.aboutWebView.opaque = NO;
-        cell.aboutWebView.mediaPlaybackRequiresUserAction = NO;
-        cell.aboutWebView.allowsInlineMediaPlayback = YES;
-        cell.aboutWebView.backgroundColor =  [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-        htmlString = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",htmlString];
-        [cell.aboutWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",htmlString] baseURL:nil];
-        cell.aboutWebView.delegate = self;
-        cell.aboutWebView.scrollView.scrollEnabled = NO;
-        cell.aboutWebViewContentHeight.constant = currentContentHeight;
-
-    }
     
-    cell.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

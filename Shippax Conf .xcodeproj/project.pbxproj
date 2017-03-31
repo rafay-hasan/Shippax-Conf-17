@@ -75,6 +75,8 @@
 		BBA72BB31E8297F700BED342 /* ProgrammeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA72BB21E8297F700BED342 /* ProgrammeViewController.m */; };
 		BBA72BB61E829B4900BED342 /* ProgrammeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA72BB51E829B4900BED342 /* ProgrammeTableViewCell.m */; };
 		BBD665921E7C15040054AFA0 /* SpeakerWebServiceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */; };
+		BBDDE4D41E8E6AFD00847C80 /* ArubaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDDE4D31E8E6AFD00847C80 /* ArubaViewController.m */; };
+		BBDDE4D71E8E9E5E00847C80 /* ClientInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDDE4D61E8E9E5E00847C80 /* ClientInfoTableViewCell.m */; };
 		BBF69BF21E8110DA004CA5C7 /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */; };
 		BBF69BF61E811321004CA5C7 /* ExhibitorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF69BF51E811321004CA5C7 /* ExhibitorCollectionViewCell.m */; };
 		BBF69BF81E812A6F004CA5C7 /* MainSponsor.html in Resources */ = {isa = PBXBuildFile; fileRef = BBF69BF71E812A6F004CA5C7 /* MainSponsor.html */; };
@@ -202,6 +204,10 @@
 		BBA72BB51E829B4900BED342 /* ProgrammeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeTableViewCell.m; sourceTree = "<group>"; };
 		BBD665901E7C15040054AFA0 /* SpeakerWebServiceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerWebServiceObject.h; sourceTree = "<group>"; };
 		BBD665911E7C15040054AFA0 /* SpeakerWebServiceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerWebServiceObject.m; sourceTree = "<group>"; };
+		BBDDE4D21E8E6AFC00847C80 /* ArubaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArubaViewController.h; sourceTree = "<group>"; };
+		BBDDE4D31E8E6AFD00847C80 /* ArubaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArubaViewController.m; sourceTree = "<group>"; };
+		BBDDE4D51E8E9E5E00847C80 /* ClientInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientInfoTableViewCell.h; sourceTree = "<group>"; };
+		BBDDE4D61E8E9E5E00847C80 /* ClientInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientInfoTableViewCell.m; sourceTree = "<group>"; };
 		BBF69BF01E8110DA004CA5C7 /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
 		BBF69BF11E8110DA004CA5C7 /* ExhibitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsViewController.m; sourceTree = "<group>"; };
 		BBF69BF41E811321004CA5C7 /* ExhibitorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorCollectionViewCell.h; sourceTree = "<group>"; };
@@ -371,6 +377,8 @@
 				BB6651C91E891CEE00C53608 /* MSNearbyViewController.m */,
 				BB915AFC1E8D16DA0018669E /* MSPlacemarkListViewController.h */,
 				BB915AFD1E8D16DA0018669E /* MSPlacemarkListViewController.m */,
+				BBDDE4D21E8E6AFC00847C80 /* ArubaViewController.h */,
+				BBDDE4D31E8E6AFD00847C80 /* ArubaViewController.m */,
 			);
 			name = Aruba;
 			sourceTree = "<group>";
@@ -472,6 +480,8 @@
 				BB3BCFF21E801ECD007B1EE0 /* AboutViewController.m */,
 				BB3BCFF71E802357007B1EE0 /* AboutTableViewCell.h */,
 				BB3BCFF81E802357007B1EE0 /* AboutTableViewCell.m */,
+				BBDDE4D51E8E9E5E00847C80 /* ClientInfoTableViewCell.h */,
+				BBDDE4D61E8E9E5E00847C80 /* ClientInfoTableViewCell.m */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -668,6 +678,7 @@
 				BB2E5DC91E7988CF00768B60 /* SDWebImageDecoder.m in Sources */,
 				BB2E5D411E796E2600768B60 /* AppDelegate.m in Sources */,
 				BB3BCFEF1E801294007B1EE0 /* InboxTableViewCell.m in Sources */,
+				BBDDE4D71E8E9E5E00847C80 /* ClientInfoTableViewCell.m in Sources */,
 				BB2E5DD21E7988CF00768B60 /* UIImageView+WebCache.m in Sources */,
 				BB46D8C81E83E99300CAF826 /* InboxDetailsViewController.m in Sources */,
 				BBA72BB61E829B4900BED342 /* ProgrammeTableViewCell.m in Sources */,
@@ -683,6 +694,7 @@
 				BB2E5D7B1E79852400768B60 /* KASlideShow.m in Sources */,
 				BB3BCFE81E800DCB007B1EE0 /* Reachability.m in Sources */,
 				BB2E5DCC1E7988CF00768B60 /* SDWebImageManager.m in Sources */,
+				BBDDE4D41E8E6AFD00847C80 /* ArubaViewController.m in Sources */,
 				BB915AFB1E8D14160018669E /* MapMenuViewController.m in Sources */,
 				BB2E5D3E1E796E2600768B60 /* main.m in Sources */,
 				BB0D43271E8176C900F9D117 /* SponsorDetailsViewController.m in Sources */,

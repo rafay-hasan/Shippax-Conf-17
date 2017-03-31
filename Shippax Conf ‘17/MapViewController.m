@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "ArubaViewController.h"
 #import <Meridian/Meridian.h>
 @interface MapViewController ()<MRMapViewDelegate>
 
@@ -29,6 +30,11 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self loadMeridianMap];
+    
+    MRMapViewController *mapController = [MRMapViewController new];
+    mapController.mapView.mapKey = [MREditorKey keyForMap:[[NSBundle mainBundle]objectForInfoDictionaryKey:@"MapId"] app:[[NSBundle mainBundle]objectForInfoDictionaryKey:@"AppId"]];
+    self.view = self.mapView;
+    
 
 }
 
@@ -122,6 +128,17 @@
     
 }
 
+- (MRAnnotationView *)mapView:(MRMapView *)mapView viewForAnnotation:(id<MRAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MRPlacemark class]])
+    {
+        MRPlacemarkAnnotationView *defaultView = (MRPlacemarkAnnotationView *)[mapView defaultViewForAnnotation:annotation];
+        
+        defaultView.canTapCallout = YES;
+        defaultView.canShowCallout = YES;
+        return defaultView;
+    }
+    return nil;
+}
 
 
 - (IBAction)mapRefreshAction:(id)sender {
@@ -129,9 +146,30 @@
     [self loadMeridianMap];
 }
 
-- (IBAction)mapDirectionAction:(id)sender {
+- (IBAction)mapDirectionAction:(id)sender
+{
     
     [self directionsAction];
 }
+
+
+//- (MRAnnotationView *)mapView:(MRMapView *)mapView viewForAnnotation:(id<MRAnnotation>)annotation
+//{
+//    
+//    if ([annotation isKindOfClass:[MRPlacemark class]]) {
+//        MRPlacemarkAnnotationView *defaultView = (MRPlacemarkAnnotationView *)[mapView defaultViewForAnnotation:annotation];
+//        defaultView.canTapCallout = YES;
+//        return defaultView;
+//    }
+//    return nil;
+//}
+
+- (void)mapView:(MRMapView *)mapView didTapCalloutForAnnotationView:(MRAnnotationView *)view {
+
+    [self directionsAction];
+}
+
+
+
 
 @end
