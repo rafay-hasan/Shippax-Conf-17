@@ -8,7 +8,6 @@
 
 #import "MapViewController.h"
 #import <Meridian/Meridian.h>
-#import "MSNearbyViewController.h"
 @interface MapViewController ()<MRMapViewDelegate>
 
 @property (strong,nonatomic) MRMapView *mapView;
@@ -17,7 +16,7 @@
 
 - (IBAction)mapRefreshAction:(id)sender;
 - (IBAction)mapDirectionAction:(id)sender;
-- (IBAction)localSearchAction:(id)sender;
+
 
 
 @end
@@ -135,9 +134,4 @@
     [self directionsAction];
 }
 
-- (IBAction)localSearchAction:(id)sender {
-    
-    MSNearbyViewController *vc = [MSNearbyViewController new];
-    [[self navigationController] pushViewController:vc animated:YES];
-}
 @end

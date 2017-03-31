@@ -38,6 +38,9 @@
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     self.searchBar.delegate = self;
     self.navigationItem.titleView = self.searchBar;
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6];
+    
+
     
     // create our location manager
     self.locationManager = [[MRLocationManager alloc] initWithApp:self.appKey];
