@@ -57,7 +57,7 @@
     if(indexPath.section == 0)
     {
         cell.textLabel.text = @"Placemarks";
-        cell.imageView.image = [[UIImage imageNamed:@"Placemarks"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        cell.imageView.image = [[UIImage imageNamed:@"Placemark"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
     }
     else if (indexPath.section == 1)

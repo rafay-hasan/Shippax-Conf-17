@@ -53,6 +53,8 @@
     self.spinner.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.spinner];
     
+    self.title = @"Placemarks";
+    
     [self loadPlacemarks];
 }
 

@@ -120,6 +120,7 @@
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.showsUserHeading = YES;
+    self.mapView.showsOverviewButton = YES;
     self.mapView.showsAccessibilityButton = YES;
     self.mapView.showsDirectionsControl = YES;
     self.mapView.showsMapPicker = YES;

@@ -79,7 +79,7 @@
     {
         ClientInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"clientInfoCell" forIndexPath:indexPath];
         
-        cell.appVersionLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        cell.appVersionLabel.text = @"1.5";//[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         cell.clientIdLabel.text = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
         
         cell.backgroundColor = [UIColor clearColor];
