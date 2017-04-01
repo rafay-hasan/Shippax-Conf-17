@@ -18,6 +18,7 @@
 - (IBAction)mapRefreshAction:(id)sender;
 - (IBAction)mapDirectionAction:(id)sender;
 
+- (IBAction)mapOverViewButtonAction:(id)sender;
 
 
 @end
@@ -151,6 +152,12 @@
 {
     
     [self directionsAction];
+}
+
+- (IBAction)mapOverViewButtonAction:(id)sender {
+    
+    MRMap *map = self.mapView.map;
+    [self.mapView setVisibleMapRect:CGRectMake(0, 0, map.size.width, map.size.height) animated:YES completion:NULL];
 }
 
 

@@ -836,7 +836,7 @@
 				MeridianAppId = 6204238904950784;
 				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
 				MeridianMapId = 5714163003293696;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcp.Shippax;
 				PRODUCT_NAME = "Shippax Conf '17";
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
 				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";
@@ -860,7 +860,7 @@
 				MeridianAppId = 6204238904950784;
 				MeridianDeviceToken = cb7ee79e5195bf41ee62c6563438e3a89f5012b5;
 				MeridianMapId = 5714163003293696;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.rafayDebugProfile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcp.Shippax;
 				PRODUCT_NAME = "Shippax Conf '17";
 				PROVISIONING_PROFILE = "978abd86-1b36-4428-875b-88de8035c9d5";
 				PROVISIONING_PROFILE_SPECIFIER = "MCP debug profile";

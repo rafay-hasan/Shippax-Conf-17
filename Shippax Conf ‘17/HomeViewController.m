@@ -229,21 +229,28 @@
         
         self.homeObject = [self.homeDataArray objectAtIndex:indexPath.section - 1];
         
-        cell.titleWebView.opaque = NO;
-        cell.titleWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-        NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#FFFFFF;'>%@",self.homeObject.homeTitle];
-        [cell.titleWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-        cell.titleWebView.delegate = self;
-        cell.titleWebView.scrollView.scrollEnabled = NO;
-        cell.titleWebView.tag = 1000 + (indexPath.section -1);
+        if(self.homeObject.homeTitle.length > 0)
+        {
+            cell.titleWebView.opaque = NO;
+            cell.titleWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+            NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#FFFFFF;'>%@",self.homeObject.homeTitle];
+            [cell.titleWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+            cell.titleWebView.delegate = self;
+            cell.titleWebView.scrollView.scrollEnabled = NO;
+            cell.titleWebView.tag = 1000 + (indexPath.section -1);
+        }
         
-        cell.detailsWebView.opaque = NO;
-        cell.detailsWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
-        detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.homeObject.homeDescription];
-        [cell.detailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
-        cell.detailsWebView.delegate = self;
-        cell.detailsWebView.scrollView.scrollEnabled = NO;
-        cell.detailsWebView.tag = 2000 + (indexPath.section - 1);
+        
+        if(self.homeObject.homeDescription.length > 0)
+        {
+            cell.detailsWebView.opaque = NO;
+            cell.detailsWebView.backgroundColor =  [UIColor clearColor];//[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.4];
+            NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#FFFFFF;'>%@",self.homeObject.homeDescription];
+            [cell.detailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
+            cell.detailsWebView.delegate = self;
+            cell.detailsWebView.scrollView.scrollEnabled = NO;
+            cell.detailsWebView.tag = 2000 + (indexPath.section - 1);
+        }
         
         
         if(indexPath.section == 1)

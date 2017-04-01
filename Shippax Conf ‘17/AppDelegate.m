@@ -106,7 +106,41 @@
     
     // Since we don't want to pollute our app delegate with logic to generate an alert if we're foregrounded, we'll handle
     // that case here.
-    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+    
+    NSString *title,*messageDetails,*featuredImage;
+    
+    if([campaignInfo[@"title"] isKindOfClass:[NSString class]])
+    {
+        title = campaignInfo[@"title"];
+    }
+    else
+    {
+        title = @"";
+    }
+    
+    if([campaignInfo[@"message"] isKindOfClass:[NSString class]])
+    {
+        messageDetails = campaignInfo[@"message"];
+    }
+    else
+    {
+        messageDetails = @"";
+    }
+    
+    featuredImage = @"";
+    
+    [self saveMessageWithId:[self retrieveMessageId] title:title details:messageDetails imageUrl:featuredImage withUnixTime:0.0];
+    
+    
+    [Inbox_Shared_Object sharedInstance].totalCountNumber = [NSNumber numberWithInteger:[self retrieveTotalUnreadMessage]];
+    if([Inbox_Shared_Object sharedInstance].totalCountNumber >= [NSNumber numberWithInt:1])
+        [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = [NSString stringWithFormat:@"%@",[Inbox_Shared_Object sharedInstance].totalCountNumber];
+    else
+        [self.tabBarController.tabBar.items objectAtIndex:2].badgeValue = nil;
+    
+    
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
+    {
         
         [[[UIAlertView alloc] initWithTitle:campaignInfo[@"title"]
                                     message:campaignInfo[@"message"]
