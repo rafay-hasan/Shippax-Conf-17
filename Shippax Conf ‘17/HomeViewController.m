@@ -81,7 +81,6 @@
     
     [self.homeTableView addSubview:self.dutyFreeItemsRefreshControl];
 
-    
     [self CallHomeWebservice];
 }
 

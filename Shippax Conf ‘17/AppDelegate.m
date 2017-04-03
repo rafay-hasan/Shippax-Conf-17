@@ -260,7 +260,7 @@
                          featuredImage = @"";
                      
                      if(i == 0)
-                         messageId = [[queedArray objectAtIndex:i] valueForKey:@"id"];
+                         messageId = [NSString stringWithFormat:@"%@",[[queedArray objectAtIndex:i] valueForKey:@"id"]];
                      else
                          messageId = [NSString stringWithFormat:@"%@,%@",messageId,[[queedArray objectAtIndex:i] valueForKey:@"id"]];
                      
@@ -413,7 +413,7 @@
                          featuredImage = @"";
                      
                      if(i == 0)
-                         messageId = [[queedArray objectAtIndex:i] valueForKey:@"id"];
+                         messageId = [NSString stringWithFormat:@"%@",[[queedArray objectAtIndex:i] valueForKey:@"id"]];
                      else
                          messageId = [NSString stringWithFormat:@"%@,%@",messageId,[[queedArray objectAtIndex:i] valueForKey:@"id"]];
                      
