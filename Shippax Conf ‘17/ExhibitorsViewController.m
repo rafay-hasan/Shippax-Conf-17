@@ -57,6 +57,8 @@
              forControlEvents:UIControlEventValueChanged];
     [self.sponsorsCollectionview addSubview:self.refreshControl];
     self.sponsorsCollectionview.alwaysBounceVertical = YES;
+    
+    [self CallExhibitorWebservice];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -64,7 +66,7 @@
     [super viewDidAppear:YES];
     
     [self.slideShow start];
-    [self CallExhibitorWebservice];
+    //[self CallExhibitorWebservice];
 
 }
 
